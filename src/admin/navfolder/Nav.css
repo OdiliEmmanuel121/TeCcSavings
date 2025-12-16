@@ -1,0 +1,120 @@
+.NavContainer {
+    display: flex;
+    justify-content: space-between; /* Automatically pushes logo and links apart */
+    align-items: center;
+    padding: 15px 40px;
+    background-color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logoclass {
+    width: 80px;
+    height: auto;
+}
+
+/* Desktop Links */
+.linkDiv {
+    display: flex;
+    gap: 30px;
+}
+
+.linkDiv a {
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    font-family: sans-serif;
+}
+
+.linkbutton {
+    text-decoration: none;
+    color: white;
+    font-weight: normal;
+    font-size: 18px;
+    font-family: sans-serif;
+    background-color: #18531C;
+    padding: 8px 16px;
+    border-radius: 5px;
+}
+
+.linkbutton:hover {
+    background-color: #0e310e;
+}
+.Login {
+    text-decoration: none;
+    color: white;
+    font-weight: normal;
+    font-size: 18px;
+    font-family: sans-serif;
+    /* background: linear-gradient(180deg, rgba(24, 75, 9, 0.92) 26.92%, rgba(221, 221, 221, 0.92) 78.37%), rgba(158, 50, 50, 0.48); */
+    background-color: #18531C;
+    /* background-color: #007bff; */
+    padding: 8px 16px;
+    border-radius: 5px;
+}
+.Login:hover {
+    background-color: #0e310e;
+}
+
+.linkdDiv2 {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Icons styling */
+.hamburger-btn {
+    display: none; /* Hide on desktop */
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #18531C;
+}
+
+.mobile-only-actions { display: none; }
+
+/* --- MOBILE VIEW --- */
+@media (max-width: 850px) {
+    .hamburger-btn {
+        display: block; /* Show on mobile */
+    }
+
+    .desktop-only {
+        display: none; /* Hide standard buttons to save space */
+    }
+
+    .linkDiv {
+        display: none; /* Hide horizontal links */
+    }
+
+    /* Your existing nav-active class with a few fixes */
+    .nav-active {
+        display: flex !important;
+        flex-direction: column;
+        position: absolute;
+        top: 100%; /* Sits right below the nav bar */
+        left: 0;
+        width: 100%;
+        background-color: #ffffff;
+        padding: 40px 0;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        gap: 25px;
+        align-items: center;
+        border-top: 1px solid #eee;
+    }
+
+    .nav-active a {
+        text-decoration: none;
+        color: black;
+        font-size: 22px;
+        font-weight: bold;
+    }
+
+    .mobile-only-actions {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        margin-top: 10px;
+    }
+}

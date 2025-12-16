@@ -1,0 +1,75 @@
+// Google Tag manager
+;(function (w, d, s, l, i) {
+  w[l] = w[l] || []
+  w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' })
+  var f = d.getElementsByTagName(s)[0],
+    j = d.createElement(s),
+    dl = l != 'dataLayer' ? '&l=' + l : ''
+  j.async = true
+  j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl
+  f.parentNode.insertBefore(j, f)
+})(window, document, 'script', 'dataLayer', 'GTM-WW527RZ')
+
+// Google Tag
+;(function (w, d, s, l, i) {
+  w[l] = w[l] || []
+  w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' })
+  var f = d.getElementsByTagName(s)[0],
+    j = d.createElement(s),
+    dl = l != 'dataLayer' ? '&l=' + l : ''
+  j.async = true
+  j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl
+  f.parentNode.insertBefore(j, f)
+})(window, document, 'script', 'dataLayer', 'GT-MQ7635S')
+
+// Facebook
+!(function (f, b, e, v, n, t, s) {
+  if (f.fbq) return
+  n = f.fbq = function () {
+    n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+  }
+  if (!f._fbq) f._fbq = n
+  n.push = n
+  n.loaded = !0
+  n.version = '2.0'
+  n.queue = []
+  t = b.createElement(e)
+  t.async = !0
+  t.src = v
+  s = b.getElementsByTagName(e)[0]
+  s.parentNode.insertBefore(t, s)
+})(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js')
+fbq('init', '636916683719343')
+fbq('track', 'PageView')
+
+// Freshchat integration
+function initFreshChat() {
+  window.fcWidget.init({
+    token: '9fe2300b-2aec-4493-89a3-3ee819c0a7fb',
+    host: 'https://wchat.freshchat.com',
+  })
+}
+function initialize(i, t) {
+  var e
+  i.getElementById(t)
+    ? initFreshChat()
+    : (((e = i.createElement('script')).id = t),
+      (e.defer = true),
+      (e.src = 'https://wchat.freshchat.com/js/widget.js'),
+      (e.onload = initFreshChat),
+      i.head.appendChild(e))
+}
+function initiateCall() {
+  initialize(document, 'Freshdesk Messaging-js-sdk')
+}
+
+window.addEventListener
+  ? window.addEventListener('load', initiateCall, !1)
+  : window.attachEvent('load', initiateCall, !1)
+
+window.dataLayer = window.dataLayer || []
+function gtag() {
+  dataLayer.push(arguments)
+}
+gtag('js', new Date())
+gtag('config', 'AW-668953253')
