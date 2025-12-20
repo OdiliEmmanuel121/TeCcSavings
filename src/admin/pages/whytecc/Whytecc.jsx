@@ -1,14 +1,14 @@
 import React, { useState } from 'react'; // Ensure useState is imported
 import './Whytecc.css'
 import iphone from '../../../assets/iphone.png'
-import { ArrowCircleLeft, ArrowCircleRight } from '@mui/icons-material'
+import { ArrowCircleLeft, ArrowCircleRight, Facebook, Instagram, Twitter, WhatsApp } from '@mui/icons-material'
 import adrons from '../../../assets/adrons.jpg'
 import hisense from '../../../assets/hisense.jpg'
 import wwe from '../../../assets/wwe.png'
 import samsung from '../../../assets/samung.png'
 import netflix from '../../../assets/netflix.png'
 import amazon from '../../../assets/amazon.png'
-import countries from '../../../assets/countries.webp'
+// import countries from '../../../assets/countries.webp'
 import king from '../../../assets/king.JPG'
 import queen from '../../../assets/queen.jpg'
 import prince from '../../../assets/prince.jpg'
@@ -19,6 +19,10 @@ import billi3 from '../../../assets/billi3.jpg'
 import iphone11 from '../../../assets/iphone11.png'
 import efx1 from '../../../assets/efx1.png'
 import spin from '../../../assets/spin.png'
+import savemoney from '../../../assets/savemoney.jpg'
+import growmoney from '../../../assets/growmoney.jpg'
+import interestmoney from '../../../assets/interestmoney.jpg'
+import vacationmoney from '../../../assets/vacationmoney.jpg'
 
 const Whytecc = () => {
   // --- CALCULATOR LOGIC START ---
@@ -29,11 +33,40 @@ const Whytecc = () => {
   const annualReturnRate = 0.10; // 10% annual return
   const monthlyInvestment = (monthlyEarn * (investPercent / 100));
   const totalSaved = monthlyInvestment * 12 * years;
-  
+
   const monthlyRate = annualReturnRate / 12;
   const totalMonths = years * 12;
   const futureValue = monthlyInvestment * ((Math.pow(1 + monthlyRate, totalMonths) - 1) / monthlyRate);
   // --- CALCULATOR LOGIC END ---
+
+  const [activeCard, setActiveCard] = useState(null);
+
+  const savingsData = [
+    {
+      id: 1,
+      img: savemoney,
+      title: "Effective savings begin with an understanding of your finances",
+      text: "Your goals are deeply personal, shaped by your unique aspirations and dreams. More than two million Nigerians turn to Cowrywise to cultivate wealth."
+    },
+    {
+      id: 2,
+      img: growmoney,
+      title: "Combine smart saving with consistent, long-term investing",
+      text: "Pay off high-interest debts, create a budget, open a savings account, and pay yourself first to keep growing."
+    },
+    {
+      id: 3,
+      img: interestmoney,
+      title: "Millions of customers can't be wrong",
+      text: "A trusted partner dedicated to helping individuals cultivate their wealth in a way that reflects their personal journey."
+    },
+    {
+      id: 4,
+      img: vacationmoney,
+      title: "Save to earn interest over a period of time",
+      text: "Savings helps to fund major life goals like education, homes, or retirement without dipping into daily funds."
+    }
+  ];
 
   return (
     <div className='whyteccContainer'>
@@ -88,18 +121,44 @@ const Whytecc = () => {
         </div>
       </div>
 
-      <div className='sevensection'>
-        <h1 className='numbers'>Check our numbers</h1>
-        <div className='headingseven'>
-          <h1 className='headh1' >900k +</h1>
-          <h1 className='headh2'  >#42m +</h1>
-          <h1 className='headingsevenh1'>5 <img className='countries' src={countries} alt="countries" /> </h1>
+      <div className='whyteccContainer'>
+        {/* ... (Sections 1 through 6 stay the same) ... */}
+
+        <div className='sevensection-container'>
+          <div className='seven-track'>
+            {/* We render the list twice for a seamless infinite loop */}
+            {[...savingsData, ...savingsData].map((item, index) => (
+              <div
+                key={index}
+                className="card001"
+                onClick={() => setActiveCard(item)}
+              >
+                <img src={item.img} alt="money" className="card-image1" />
+                <div className="card-content1">
+                  <h3 className="card-title1">{item.title}</h3>
+                  <p className="card-text1">{item.text.substring(0, 100)}...</p>
+                  <span className="view-more">Click to view</span>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
-        <div className='headingseven2'>
-          <h1 className='headh3' >Users</h1>
-          <h1 className='headh4'  >Paid out to users</h1>
-          <h1 className='headh5'  >Countries</h1>
-        </div>
+
+        {/* --- POPUP MODAL --- */}
+        {activeCard && (
+          <div className="modal-overlay" onClick={() => setActiveCard(null)}>
+            <div className="modal-card" onClick={(e) => e.stopPropagation()}>
+              <button className="close-btn" onClick={() => setActiveCard(null)}>×</button>
+              <img src={activeCard.img} alt="detail" />
+              <div className="modal-info">
+                <h3>{activeCard.title}</h3>
+                <p>{activeCard.text}</p>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* ... (Rest of your sections: eleventh, eight, etc.) ... */}
       </div>
 
       <div className='eleventhsection' >
@@ -122,14 +181,14 @@ const Whytecc = () => {
       <div className='eightsection'>
         <div className='eightcard'>
           <h1 className='startbuilding'>Start building your future</h1>
-          
+
           <div className="calc-card-internal">
             <div className="input-group">
               <label>How much do you earn monthly?</label>
               <p className="recommend-text">You can type in your exact income in the display field</p>
-              <input 
-                type="number" 
-                value={monthlyEarn} 
+              <input
+                type="number"
+                value={monthlyEarn}
                 onChange={(e) => setMonthlyEarn(Number(e.target.value))}
                 className="calc-input"
               />
@@ -138,9 +197,9 @@ const Whytecc = () => {
             <div className="input-group">
               <label>What income % do you want to invest monthly?</label>
               <p className="recommend-text">We recommend 20% but feel free to start lower.</p>
-              <input 
-                type="range" min="1" max="100" 
-                value={investPercent} 
+              <input
+                type="range" min="1" max="100"
+                value={investPercent}
                 onChange={(e) => setInvestPercent(Number(e.target.value))}
                 className="calc-range"
               />
@@ -160,18 +219,18 @@ const Whytecc = () => {
             <div className="results-grid">
               <div className="result-item main-result">
                 <p>You get</p>
-                <h2 className="result-value">${futureValue.toLocaleString(undefined, {maximumFractionDigits: 2})}</h2>
+                <h2 className="result-value">${futureValue.toLocaleString(undefined, { maximumFractionDigits: 2 })}</h2>
                 <span className="result-duration">in {years} years</span>
               </div>
 
               <div className="result-sub-grid">
                 <div className="result-item">
                   <p>Returns</p>
-                  <h4 className="sub-value">${(futureValue - totalSaved).toLocaleString(undefined, {maximumFractionDigits: 2})}</h4>
+                  <h4 className="sub-value">${(futureValue - totalSaved).toLocaleString(undefined, { maximumFractionDigits: 2 })}</h4>
                 </div>
                 <div className="result-item">
                   <p>Savings</p>
-                  <h4 className="sub-value">${totalSaved.toLocaleString(undefined, {maximumFractionDigits: 2})}</h4>
+                  <h4 className="sub-value">${totalSaved.toLocaleString(undefined, { maximumFractionDigits: 2 })}</h4>
                 </div>
               </div>
             </div>
@@ -213,11 +272,11 @@ const Whytecc = () => {
         </div>
       </div>
 
-       <div className='spinmain'>
+      <div className='spinmain'>
         <div className='spindiv1'>
           <img src={spin} alt="spin" className='spin' />
         </div>
-        <div className='spindiv2'> 
+        <div className='spindiv2'>
           <h1 className='spinh1'>We manage your finances with responsibility and integrity. Regulated by the SEC, we prioritize transparency in all our operations. Our approach eliminates hidden fees and risky maneuvers, providing you with straightforward access to carefully selected assets designed to help you grow your wealth effectively.</h1>
         </div>
       </div>
@@ -270,7 +329,17 @@ const Whytecc = () => {
             </div>
           </div>
         </div>
-        <p className='footertext'>&copy; 2024 Tecc Savings. All rights reserved.</p>
+
+        <div className='footer' >
+          <p className='footertext'>&copy; 2026 Tecc Savings Technology . All rights reserved.</p>
+          <div className='socialink'>
+            <a className='facebook' href="#" > < Facebook/> facebook</a>
+            <a className='instagram' href="#" > <Instagram/> instagram</a>
+            <a className='twitter' href="#" > <Twitter/> twitter</a>
+            <a className='whatsapp' href="#" > <WhatsApp/> whatsapp</a>
+          </div>
+        </div>
+
       </div>
     </div>
   )

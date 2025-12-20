@@ -14,10 +14,10 @@ const Nav = () => {
             </div>
 
             {/* This div uses your .linkDiv for desktop and .nav-active for mobile */}
-            <div className={`${isOpen ? "nav-active" : "linkDiv"}`}>
-                <Link to="/whytecc" onClick={() => setIsOpen(false)}>Why TeCc</Link>
-                <Link to="/goforgrowth" onClick={() => setIsOpen(false)}>Go for growth</Link>
-                <Link to="/blog" onClick={() => setIsOpen(false)}>Blog</Link>
+            <div className={`${isOpen ? "nav-active" : "linkDiv1"}`}>
+                <Link className='whyT' to="/whytecc" onClick={() => setIsOpen(false)}>Why TeCc</Link>
+                <Link className='whyT' to="/goforgrowth" onClick={() => setIsOpen(false)}>Go for growth</Link>
+                <Link className='whyT' to="/blog" onClick={() => setIsOpen(false)}>Blog</Link>
                 
                 {/* Optional: Show login/buttons inside the menu on mobile */}
                 <div className="mobile-only-actions">
