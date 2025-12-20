@@ -19,10 +19,6 @@ const Nav = () => {
                 <Link className='whyT' to="/goforgrowth" onClick={() => setIsOpen(false)}>Go for growth</Link>
                 <Link className='whyT' to="/blog" onClick={() => setIsOpen(false)}>Blog</Link>
                 
-                {/* Optional: Show login/buttons inside the menu on mobile */}
-                <div className="mobile-only-actions">
-                    <Link className='Login' to="/login" onClick={() => setIsOpen(false)}>Log in</Link>
-                </div>
             </div>
 
             <div className='linkdDiv2'>
