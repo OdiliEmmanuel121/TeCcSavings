@@ -1,0 +1,160 @@
+/* Global Reset for the page context */
+.loginContainer {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 100px; /* Reduced from 300px for a tighter, professional look */
+    background: linear-gradient(135deg, #f8faf9 0%, #e2ee e6 100%);
+    padding: 20px;
+    font-family: 'Inter', -apple-system, sans-serif;
+}
+
+/* LEFT SIDE: Content & Card */
+.loginDetails {
+    max-width: 450px;
+    width: 100%;
+}
+
+.loginclassh1 {
+    color: #033312;
+    font-size: 28px;
+    font-weight: 800;
+    margin-bottom: 8px;
+    letter-spacing: -0.5px;
+}
+
+.loginclassh2 {
+    font-size: 32px;
+    color: #1a1a1a;
+    margin-bottom: 12px;
+}
+
+.loginclassh3 {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+/* THE CARD */
+.logincard {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 24px;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    box-shadow: 0 20px 40px rgba(0, 51, 18, 0.08);
+    transition: transform 0.3s ease;
+}
+
+.logincard:hover {
+    transform: translateY(-5px);
+}
+
+/* INPUT STYLES */
+.loginEmail, .loginPassword {
+    width: 100%;
+    padding: 14px 16px;
+    margin-bottom: 15px;
+    border-radius: 12px;
+    border: 1.5px solid #e0e0e0;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    box-sizing: border-box; /* Fixes padding overflow */
+}
+
+.loginEmail:focus, .loginPassword:focus {
+    outline: none;
+    border-color: #278f2e;
+    box-shadow: 0 0 0 4px rgba(39, 143, 46, 0.1);
+}
+
+/* PASSWORD WRAPPER & TOGGLE */
+.password-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.visiblepassword {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-75%); /* Aligns with input center */
+    background: none;
+    border: none;
+    color: #888;
+    cursor: pointer;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+}
+
+/* BUTTONS - FIXED LAYOUT */
+.loginButton {
+    display: flex;
+    justify-content: center; /* This replaces padding-left: 230px */
+    align-items: center;
+    background-color: #278f2e;
+    color: white;
+    text-decoration: none;
+    padding: 14px;
+    border-radius: 12px;
+    font-weight: 600;
+    margin-top: 25px;
+    transition: background 0.3s ease;
+}
+
+.loginButton:hover {
+    background-color: #1e6d23;
+}
+
+.loginButton2, .loginButton3 {
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+    margin-top: 15px;
+    transition: opacity 0.3s;
+}
+
+.loginButton2 {
+    color: #666;
+}
+
+.loginButton3 {
+    color: #278f2e;
+    margin-top: 20px;
+}
+
+.loginButton2:hover, .loginButton3:hover {
+    opacity: 0.7;
+}
+
+/* RIGHT SIDE: ANIMATED IMAGE */
+.iphoneimgup {
+    width: 400px;
+    filter: drop-shadow(0 30px 50px rgba(0,0,0,0.15));
+    animation: floatVertical 5s ease-in-out infinite;
+}
+
+@keyframes floatVertical {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-30px); } /* Subtle float is more "premium" */
+}
+
+/* MOBILE RESPONSIVENESS */
+@media (max-width: 1024px) {
+    .loginContainer {
+        flex-direction: column-reverse; /* Image on top, form below */
+        gap: 40px;
+        text-align: center;
+    }
+    
+    .iphoneimgup {
+        width: 250px;
+    }
+
+    .visiblepassword {
+        transform: translateY(-70%);
+    }
+}

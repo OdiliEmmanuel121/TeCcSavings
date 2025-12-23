@@ -172,9 +172,7 @@ const Whytecc = () => {
           <h1 className='billih12'>A Circle.</h1>
           <p className='billip'>Achieve your financial goals more effectively by saving with friends through a friendly competition</p>
         </div>
-        <div className='joinheading'>
           <a className='joincircle' href="#">Join a Circle now</a>
-        </div>
       </div>
 
       {/* --- MODIFIED EIGHTSECTION START --- */}
