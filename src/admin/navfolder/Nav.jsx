@@ -15,7 +15,7 @@ const Nav = () => {
 
             {/* This div uses your .linkDiv for desktop and .nav-active for mobile */}
             <div className={`${isOpen ? "nav-active" : "linkDiv1"}`}>
-                <Link className='whyT' to="/whytecc" onClick={() => setIsOpen(false)}>Why TeCc</Link>
+                <Link className='whyT' to="/" onClick={() => setIsOpen(false)}>Why TeCc</Link>
                 <Link className='whyT' to="/goforgrowth" onClick={() => setIsOpen(false)}>Go for growth</Link>
                 <Link className='whyT' to="/blog" onClick={() => setIsOpen(false)}>Blog</Link>
                

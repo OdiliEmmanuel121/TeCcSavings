@@ -1,0 +1,151 @@
+/* Container & Background */
+.GoforgrowthContainer {
+    padding: 100px 5%;
+    background: radial-gradient(circle at top right, #f0fdf4, #ffffff, #f9fafb);
+    min-height: 100vh;
+    font-family: 'Inter', -apple-system, sans-serif;
+}
+
+/* Header Styling */
+.GoHeader {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 80px auto;
+}
+
+.MainTitle {
+    font-size: clamp(32px, 5vw, 56px);
+    font-weight: 900;
+    color: #142922;
+    letter-spacing: -2px;
+    line-height: 1.1;
+}
+
+.TextGradient {
+    background: linear-gradient(90deg, #278f2e, #4CAF50);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.SubTitle {
+    font-size: 18px;
+    color: #64748b;
+    margin-top: 20px;
+}
+
+/* The Card Grid */
+.GoFirstSection {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 80px;
+}
+
+/* Individual Glass Cards */
+.GoCard {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px); /* Frosted Glass Effect */
+    padding: 40px;
+    border-radius: 32px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+}
+
+.GoCard.highlighted {
+    background: #142922; /* Deep dark green for contrast */
+    color: white;
+}
+
+.GoCard:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 30px 60px rgba(39, 143, 46, 0.15);
+    border-color: #278f2e;
+}
+
+/* Card Icons */
+.CardIcon {
+    width: 60px;
+    height: 60px;
+    background: #ecfdf5;
+    color: #278f2e;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 16px;
+    margin-bottom: 25px;
+}
+
+.GoCard.highlighted .CardIcon {
+    background: rgba(255, 255, 255, 0.1);
+    color: #4CAF50;
+}
+
+.GoCard h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    line-height: 1.3;
+}
+
+.GoCard p {
+    font-size: 15px;
+    line-height: 1.7;
+    color: #475569;
+}
+
+.GoCard.highlighted p {
+    color: #94a3b8;
+}
+
+/* Bottom Buttons */
+.thirdsection {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.cardbutton1, .cardbutton2 {
+    padding: 18px 40px;
+    border-radius: 100px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: all 0.3s ease;
+}
+
+.cardbutton1 {
+    background: #278f2e;
+    color: white;
+    box-shadow: 0 10px 20px rgba(39, 143, 46, 0.3);
+}
+
+.cardbutton2 {
+    background: white;
+    color: #278f2e;
+    border: 2px solid #278f2e;
+}
+
+.cardbutton1:hover {
+    background: #1e6d23;
+    transform: scale(1.05);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .thirdsection {
+        flex-direction: column;
+        align-items: center;
+    }
+    .cardbutton1, .cardbutton2 {
+        width: 100%;
+        justify-content: center;
+    }
+}
