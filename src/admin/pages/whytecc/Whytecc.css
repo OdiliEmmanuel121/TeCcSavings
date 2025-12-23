@@ -6,67 +6,109 @@
 
 
 
+/* Container: Modern Hero Layout */
 .firstSection {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 50px;
+    padding: 80px 5%;
+    min-height: 80vh;
+    background: radial-gradient(circle at top right, #f0fdf4, #ffffff); /* Subtle premium background */
+    overflow: hidden;
 }
 
+/* Typography: Bold and Readable */
 .firstSectionh1 {
-    font-family: sans-serif;
-    font-size: 50px;
-    margin-left: 40px;
-    margin-top: -200px;
+    flex: 1;
+    font-family: 'Inter', -apple-system, sans-serif;
+    font-size: clamp(32px, 5vw, 64px); /* Fluid font size */
+    font-weight: 800;
+    line-height: 1.1;
+    color: #142922;
+    z-index: 10;
+    animation: fadeInSlide 0.8s ease-out forwards;
 }
 
-.iphoneimg {
-    width: 20%;
-    height: 90%;
-    margin-right: 100px;
-    margin-top: 30px;
-}
-
+/* Image Wrapper Strategy */
+/* We style the images to overlap slightly for a 3D depth effect */
+.iphoneimg, 
 .iphoneimg1 {
-    width: 20%;
-    height: 90%;
-    margin-right: 90px;
-    margin-top: 30px;
-}
-
-.iphoneimg1 {
-    /* Ensure the image scales correctly on mobile */
-    max-width: 100%;
+    width: 25%;
+    max-width: 350px;
     height: auto;
-    display: block;
-    margin: 0 auto;
-    animation: floatVertical 3s ease-in-out infinite;
+    object-fit: contain;
+    filter: drop-shadow(0 20px 50px rgba(0,0,0,0.1)); /* Soft realistic shadow */
 }
 
+/* Primary Phone Image */
+.iphoneimg {
+    margin-right: 5%;
+    z-index: 2;
+}
 
-/* The Animation Logic */
+/* Secondary Floating Image (efx1) */
+.iphoneimg1 {
+    position: relative;
+    z-index: 1;
+    margin-right: -12%; /* Creates a professional overlap */
+    animation: floatVertical 1.5s ease-in-out infinite; /* Smoother, slower float */
+}
+
+/* --- Professional Animations --- */
+
+/* Smooth Floating (Reduced distance for elegance) */
 @keyframes floatVertical {
-    0% {
+    0%, 100% {
         transform: translateY(0px);
     }
-
     50% {
-        transform: translateY(-150px);
-        /* Adjust this number for a higher or lower bounce */
+        transform: translateY(-30px); /* 150px was too aggressive; 30px is premium */
     }
-
-    100% {
-        transform: translateY(0px);
-    }
-
-
 }
 
-.iphoneimg1::backdrop {
-    width: 20%;
-    height: 90%;
-    margin-right: 90px;
-    margin-top: 30px;
+/* Entrance Animation for Text */
+@keyframes fadeInSlide {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 1024px) {
+    .firstSection {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 40px;
+    }
+
+    .firstSectionh1 {
+        margin-bottom: 40px;
+        order: 1;
+    }
+
+    .iphoneimg, 
+    .iphoneimg1 {
+        width: 50%;
+        margin: 0;
+        order: 2;
+    }
+
+    .iphoneimg1 {
+        margin-top: -100px; /* Overlap on mobile */
+        opacity: 0.6; /* De-emphasize secondary image on small screens */
+    }
+}
+
+/* Hide specific break on mobile if needed */
+@media (max-width: 600px) {
+    .growth {
+        display: none;
+    }
 }
 
 .secondSection {
@@ -81,9 +123,9 @@
     color: #2f4131;
     font-family: sans-serif;
     font-weight: 700;
-    font-size: medium;
+    font-size: large;
     line-height: 22px;
-    margin-top: -550px;
+    margin-top: -300px;
 
 }
 
@@ -626,104 +668,97 @@
     color: #142922;
 }
 
-.professionals {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    margin-top: 60px;
+/* Section Background */
+.nightsection {
+    background-color: #17311c; /* Match your brand's deep green */
+    padding: 100px 5%;
+    text-align: center;
+    color: white;
+    font-family: 'Inter', sans-serif;
+    margin-top: 40px;
 }
 
-.king,
-.queen,
-.prince,
-.princess,
-.kingship {
-    width: 160px;
-    height: 150px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-
-}
-
-.king:hover,
-.queen:hover,
-.prince:hover,
-.princess:hover,
-.kingship:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-}
-
+/* Section Heading */
 .meetpro {
-    font-size: 30px;
-    font-family: sans-serif;
-    padding: 8px 16px;
-    border-radius: 20px;
-    line-height: 40px;
-    padding: 50px;
-    color: #142922;
+    font-size: clamp(32px, 5vw, 48px);
+    font-weight: 800;
+    margin-bottom: 60px;
+    letter-spacing: -1px;
 }
 
-.names {
-    display: flex;
-    justify-content: end;
-    gap: 100px;
-    margin-top: 20px;
-    margin-right: 99px;
+/* The Grid System */
+.team-grid {
+    display: grid;
+    /* Automatically creates columns that fit the screen */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.name1,
-.name2,
-.name4 {
-    font-size: 18px;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    color: #0a1b15;
+/* The Team Card */
+.team-card {
+    background: rgba(141, 57, 57, 0.03);
+    padding: 20px;
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.4s ease;
+    margin-top: 50px;
 }
 
-.name3 {
-    font-size: 18px;
-    margin-right: 10px;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    color: #0a1b15;
+.team-card:hover {
+    background: rgba(255, 255, 255, 0.07);
+    transform: translateY(-10px);
+    border-color: #278f2e; /* Brand Green */
 }
 
-.namesrole {
-    display: flex;
-    justify-content: end;
-    gap: 150px;
-    margin-top: 5px;
-    margin-right: 110px;
+/* Image Styling */
+.image-container {
+    width: 380px;
+    height: 280px;
+    margin: 0 auto 25px auto;
+    border-radius: 50%; /* Circular images */
+    overflow: hidden;
+    border: 3px solid #278f2e;
 }
 
-.position2 {
-    font-size: 11px;
-    margin-right: -30px;
-    font-family: sans-serif;
-    color: #27472e;
+.member-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures photo isn't stretched */
+    transition: transform 0.5s ease;
 }
 
-.position4 {
-    font-size: 11px;
-    font-family: sans-serif;
-    color: #27472e;
-    margin-right: 10px;
+.team-card:hover .member-img {
+    transform: scale(1.1);
 }
 
-.position1 {
-    font-size: 11px;
-    font-family: sans-serif;
-    color: #27472e;
-    margin-right: -20px;
+/* Name & Role Styling */
+.member-name {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: #ffffff;
 }
 
-.position3 {
-    font-size: 11px;
-    margin-right: 0px;
-    font-family: sans-serif;
-    color: #27472e;
-    margin-right: 5px;
+.member-role {
+    font-size: 34px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #278f2e; /* Use brand green for the role */
+    font-weight: 600;
 }
 
+/* Mobile Tweak */
+@media (max-width: 600px) {
+    .nightsection {
+        padding: 60px 20px;
+    }
+    
+    .team-grid {
+        grid-template-columns: 1fr; /* Single column on phones */
+    }
+}
 .tenthsection {
     box-shadow: 0 4px 10px rgba(0.5, 1, 1, 0.5);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -809,86 +844,130 @@
 }
 
 
-/* --- Eleventh Section (Circles) --- */
-/* --- Main Container --- */
+/* --- Section Container --- */
 .eleventhsection {
-    background-color: #0d1b10;
-    padding: 80px 24px;
+    background-color: #0d1b10; /* Deep premium green */
+    padding: 100px 5%;
     text-align: center;
     border-radius: 40px;
     margin: 60px auto;
-    max-width: 1100px; /* Limits width on ultra-wide screens */
+    max-width: 1000px;
     color: white;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centers all children perfectly */
+    align-items: center;
     justify-content: center;
+    font-family: 'Inter', sans-serif;
+    border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-/* --- The Overlapping Images (Avatar Stack) --- */
-.billi1img {
+/* --- Avatar Stack (Images) --- */
+.billi-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
+.billi-stack {
     display: flex;
     justify-content: center;
-    align-items: center;
-    margin-bottom: 40px;
-    padding-left: 30px; /* Offsets the negative margin to maintain true center */
+    padding-left: 20px; /* Counter-offsets the negative margin */
 }
 
-.billi1,
-.billi2,
-.billi3 {
-    width: 90px;
-    height: 90px;
+.billi-img {
+    width: 80px;
+    height: 80px;
     border-radius: 50%;
     object-fit: cover;
-    border: 4px solid #0d1b10; /* Match background for the cutout look */
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    margin-left: -30px; /* Creates the overlap */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    border: 4px solid #0d1b10;
+    margin-left: -20px; /* This creates the professional overlap */
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
-.billi1 { z-index: 3; margin-left: 0; }
-.billi2 { z-index: 2; }
-.billi3 { z-index: 1; }
-
-/* Interactive Hover Group */
-.billi1img:hover .billi1 { transform: translateX(-15px) rotate(-5deg); }
-.billi1img:hover .billi3 { transform: translateX(15px) rotate(5deg); }
-
-/* --- Text Styling --- */
-.eleheading {
-   flex-direction: column;
-   
+.billi-img:hover {
+    transform: translateY(-10px) scale(1.1);
+    z-index: 10;
+    cursor: pointer;
 }
 
-.billih1 {
-    font-size: clamp(20px, 4vw, 26px); /* Responsive font size */
-    font-weight: 500;
-    color: #a0a0a0;
-    margin-bottom: 8px;
-    margin-left: 450px;
-}
-
-.billih12 {
-    font-size: clamp(40px, 8vw, 72px); /* Bold, large impact text */
-    font-weight: 800;
+.billi-badge {
+    font-size: 14px;
     color: #4CAF50;
-    margin-bottom: 24px;
-    letter-spacing: -3px;
-    line-height: 1;
-    margin-left: 370px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
 }
 
-.billip {
-    font-size: 18px;
-    color: #ccd6cc;
-    line-height: 1.6;
-    max-width: 550px;
+/* --- Typography --- */
+.eleheading {
+    max-width: 700px;
     margin: 0 auto;
 }
 
-/* --- The CTA Button --- */
+.billih1 {
+    font-size: clamp(20px, 3vw, 26px);
+    font-weight: 400;
+    color: #94a3b8; /* Muted slate for the question */
+    margin-bottom: 10px;
+}
 
+.billih12 {
+    font-size: clamp(40px, 7vw, 80px); /* Massive impactful text */
+    font-weight: 900;
+    color: #4CAF50;
+    margin-bottom: 25px;
+    letter-spacing: -3px;
+    line-height: 0.9;
+}
+
+.billip {
+    font-size: clamp(16px, 2vw, 19px);
+    color: #cbd5e1;
+    line-height: 1.6;
+    max-width: 500px;
+    margin: 0 auto 40px auto;
+}
+
+/* --- CTA Button --- */
+.joincircle {
+    display: inline-block;
+    padding: 20px 50px;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 18px;
+    border-radius: 100px;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 30px rgba(76, 175, 80, 0.3);
+}
+
+.joincircle:hover {
+    background-color: #45a049;
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(76, 175, 80, 0.5);
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 768px) {
+    .eleventhsection {
+        margin: 40px 20px;
+        padding: 60px 20px;
+        border-radius: 24px;
+    }
+
+    .billi-img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .joincircle {
+        width: 100%; /* Mobile button becomes full width */
+        box-sizing: border-box;
+    }
+}
 
 .joincircle {
     display: inline-block;

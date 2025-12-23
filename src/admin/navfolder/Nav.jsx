@@ -18,13 +18,17 @@ const Nav = () => {
                 <Link className='whyT' to="/whytecc" onClick={() => setIsOpen(false)}>Why TeCc</Link>
                 <Link className='whyT' to="/goforgrowth" onClick={() => setIsOpen(false)}>Go for growth</Link>
                 <Link className='whyT' to="/blog" onClick={() => setIsOpen(false)}>Blog</Link>
-                
+               
+                {/* Optional: Show login/buttons inside the menu on mobile */}
+                <div className="mobile-only-actions">
+                    <Link className='Login' to="/login" onClick={() => setIsOpen(false)}>Log in</Link>
+                </div>
             </div>
 
             <div className='linkdDiv2'>
                 {/* These stay visible on desktop, hidden on mobile via CSS if desired */}
                 <Link className='Login desktop-only' to="/login">Log in</Link>
-                <a className='linkbutton desktop-only' href="#">Get Started</a>
+                <Link className='linkbutton desktop-only' to="/getstarted">Get Started</Link>
                 
                 {/* Hamburger Button - Only visible on mobile */}
                 <button className='hamburger-btn' onClick={() => setIsOpen(!isOpen)}>

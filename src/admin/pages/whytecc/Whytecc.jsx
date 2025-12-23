@@ -161,20 +161,34 @@ const Whytecc = () => {
         {/* ... (Rest of your sections: eleventh, eight, etc.) ... */}
       </div>
 
-      <div className='eleventhsection' >
-        <div className='billi1img'>
-          <img src={billi1} alt="billonaire" className='billi1' />
-          <img src={billi2} alt="billonaire" className='billi2' />
-          <img src={billi3} alt="billonaire" className='billi3' />
+      <section className='eleventhsection'>
+        {/* Avatar Stack Container */}
+        <div className='billi-container'>
+          <div className='billi-stack'>
+            <img src={billi1} alt="Member 1" className='billi-img billi1' />
+            <img src={billi2} alt="Member 2" className='billi-img billi2' />
+            <img src={billi3} alt="Member 3" className='billi-img billi3' />
+          </div>
+          <span className='billi-badge'>Join 5,000+ others</span>
         </div>
-        <div className='eleheading'>
-          <h1 className='billih1'>What could be better than having just one billionaire?</h1>
-          <h1 className='billih12'>A Circle.</h1>
-          <p className='billip'>Achieve your financial goals more effectively by saving with friends through a friendly competition</p>
-        </div>
-          <a className='joincircle' href="#">Join a Circle now</a>
-      </div>
 
+        {/* Content Container */}
+        <div className='eleheading'>
+          <h2 className='billih1'>What could be better than having just one billionaire?</h2>
+          <h1 className='billih12'>A Circle.</h1>
+          <p className='billip'>
+            Achieve your financial goals more effectively by saving with friends
+            through a friendly competition.
+          </p>
+        </div>
+
+        {/* Action Button */}
+        <div className='join-wrapper'>
+          <a className='joincircle' href="#">Join a Circle now</a>
+        </div>
+      </section>
+
+      
       {/* --- MODIFIED EIGHTSECTION START --- */}
       <div className='eightsection'>
         <div className='eightcard'>
@@ -237,27 +251,44 @@ const Whytecc = () => {
       </div>
       {/* --- MODIFIED EIGHTSECTION END --- */}
 
+      {/* Professional 1 */}
       <div className='nightsection'>
-        <div className='professionals'>
-          <h1 className='meetpro'>Meet the Professionals</h1>
-          <img src={king} alt="kingimage" className='king' />
-          <img src={queen} alt="queenimage" className='queen' />
-          <img src={prince} alt="princeimage" className='prince' />
-          <img src={princess} alt="princessimage" className='princess' />
+        <div className='team-card'>
+          <div className='image-container'>
+            <img src={king} alt="Oataba Porshe" className='member-img' />
+          </div>
+          <h2 className='member-name'>Oataba Porshe</h2>
+          <p className='member-role'>Web Developer</p>
         </div>
-        <div className='names'>
-          <h2 className='name1'>Oataba Porshe</h2>
-          <h2 className='name2' >Odili Toyin</h2>
-          <h2 className='name3' >Adams John</h2>
-          <h2 className='name4' >Smith Jane</h2>
+
+        {/* Professional 2 */}
+        <div className='team-card'>
+          <div className='image-container'>
+            <img src={queen} alt="Odili Toyin" className='member-img' />
+          </div>
+          <h2 className='member-name'>Odili Toyin</h2>
+          <p className='member-role'>Founder, C.E.O</p>
         </div>
-        <div className='namesrole'>
-          <h2 className='position1'>Web-developer</h2>
-          <h2 className='position2' >Founder,C.E.O</h2>
-          <h2 className='position3' >Co-Founder</h2>
-          <h2 className='position4' >Eecutives</h2>
+
+        {/* Professional 3 */}
+        <div className='team-card'>
+          <div className='image-container'>
+            <img src={prince} alt="Adams John" className='member-img' />
+          </div>
+          <h2 className='member-name'>Adams John</h2>
+          <p className='member-role'>Co-Founder</p>
+        </div>
+
+        {/* Professional 4 */}
+        <div className='team-card'>
+          <div className='image-container'>
+            <img src={princess} alt="Smith Jane" className='member-img' />
+          </div>
+          <h2 className='member-name'>Smith Jane</h2>
+          <p className='member-role'>Executive</p>
         </div>
       </div>
+
 
       <div className='twelvesection'>
         <div className='iphoneimage'>
@@ -331,10 +362,10 @@ const Whytecc = () => {
         <div className='footer' >
           <p className='footertext'>&copy; 2026 Tecc Savings Technology . All rights reserved.</p>
           <div className='socialink'>
-            <a className='facebook' href="#" > < Facebook/> facebook</a>
-            <a className='instagram' href="#" > <Instagram/> instagram</a>
-            <a className='twitter' href="#" > <Twitter/> twitter</a>
-            <a className='whatsapp' href="#" > <WhatsApp/> whatsapp</a>
+            <a className='facebook' href="#" > < Facebook /> facebook</a>
+            <a className='instagram' href="#" > <Instagram /> instagram</a>
+            <a className='twitter' href="#" > <Twitter /> twitter</a>
+            <a className='whatsapp' href="#" > <WhatsApp /> whatsapp</a>
           </div>
         </div>
 

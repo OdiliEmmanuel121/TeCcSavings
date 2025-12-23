@@ -47,8 +47,12 @@
     text-decoration: none;
     color: #142922;
     font-weight: 600;
-     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
 
+.Login:hover {
+    transform: translateY(-2px);
+    color: #278f2e;
 }
 
 .linkbutton {
@@ -59,7 +63,7 @@
     border-radius: 50px;
     font-weight: bold;
     transition: transform 0.2s ease;
-     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 
 }
 
@@ -75,8 +79,14 @@
     border: none;
     cursor: pointer;
     color: #142922;
-    z-index: 1001; /* Stay above the menu */
+    z-index: 1001;
+    /* Stay above the menu */
 }
+
+.mobile-only-actions {
+    display: none;
+}
+
 
 /* ==========================================
    MOBILE STYLES (Breakpoint: 768px)
@@ -91,17 +101,18 @@
         display: none;
     }
 
+    git
     /* Hide desktop-only auth buttons */
-    .desktop-only {
+    /* .desktop-only {
         display: none;
-    }
+    } */
 
     /* THE MOBILE MENU (Slide-in Overlay) */
     .nav-active {
-        position: fixed;
+        /* position: fixed;
         top: 0;
         right: 0;
-        height: 100vh;
+        height: 80%;
         width: 100%;
         background-color: #ffffff;
         display: flex;
@@ -110,12 +121,13 @@
         align-items: center;
         gap: 40px;
         transition: transform 0.4s cubic-bezier(0.77, 0.2, 0.05, 1.0);
-        z-index: 999;
+        z-index: 999; */
     }
 
     /* Add auth items into the mobile flex flow */
     .nav-active::after {
-        content: ""; /* Placeholder for logical flow */
+        content: "";
+        /* Placeholder for logical flow */
     }
 
     /* Stylizing Links inside Mobile Menu */
@@ -127,4 +139,9 @@
     /* You can add custom styles for buttons when they are inside the menu */
     /* If you want Login/Get Started to appear in the menu, 
        ensure your React logic includes them in the nav-active container */
+}
+
+.mobile-only-actions {
+    font-size: small;
+    background-color: #278f2e;
 }
