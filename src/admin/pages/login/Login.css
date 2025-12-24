@@ -8,6 +8,7 @@
     background: linear-gradient(135deg, #f8faf9 0%, #e2ee e6 100%);
     padding: 20px;
     font-family: 'Inter', -apple-system, sans-serif;
+    margin-top: 60px;
 }
 
 /* LEFT SIDE: Content & Card */
@@ -151,10 +152,12 @@
     }
     
     .iphoneimgup {
-        width: 250px;
+       display: none;
     }
 
     .visiblepassword {
         transform: translateY(-70%);
     }
+
+    .
 }

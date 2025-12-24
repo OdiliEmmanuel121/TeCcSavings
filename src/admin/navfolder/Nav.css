@@ -1,147 +1,143 @@
-/* --- Desktop & Global Styles --- */
+:root {
+  --nav-height: 80px;
+  --primary-blue: #2563eb;
+  --text-dark: #0f172a;
+}
+
 .NavContainer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 5%;
-    background-color: #ffffff;
-    height: 80px;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  height: var(--nav-height);
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  border-bottom: 1px solid #f1f5f9;
+  display: flex;
+  justify-content: center;
+}
+
+.NavContent {
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .logoclass {
-    height: 40px;
-    width: auto;
+  height: 40px;
+  display: block;
 }
 
-/* Links Layout (Desktop) */
+/* Desktop Links */
 .linkDiv1 {
-    display: flex;
-    gap: 30px;
+  display: flex;
+  gap: 32px;
+  align-items: center;
 }
 
-.whyT {
-    text-decoration: none;
-    color: #142922;
-    font-weight: 600;
-    font-size: 16px;
-    transition: color 0.3s ease;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+.navLink {
+  text-decoration: none;
+  color: var(--text-dark);
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: color 0.2s;
 }
 
-.whyT:hover {
-    color: #278f2e;
+.navLink:hover {
+  color: green;
 }
 
-/* Auth Buttons (Desktop) */
-.linkdDiv2 {
-    display: flex;
-    align-items: center;
-    gap: 20px;
+.mobile-only-actions{
+    display: none;
 }
 
+/* Buttons */
 .Login {
-    text-decoration: none;
-    color: #142922;
-    font-weight: 600;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  text-decoration: none;
+  color: var(--text-dark);
+  font-weight: 600;
+  margin-right: 20px;
 }
 
-.Login:hover {
-    transform: translateY(-2px);
-    color: #278f2e;
+.GetStartedBtn {
+  text-decoration: none;
+  background:#25812b;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: transform 0.2s, background 0.2s;
 }
 
-.linkbutton {
-    text-decoration: none;
-    background-color: #278f2e;
-    color: white;
-    padding: 10px 25px;
-    border-radius: 50px;
-    font-weight: bold;
-    transition: transform 0.2s ease;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-
+.GetStartedBtn:hover {
+  background: #104714;
+  transform: translateY(-1px);
 }
 
-.linkbutton:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 15px rgba(39, 143, 46, 0.3);
-}
-
-/* Hamburger Button - Hidden on Desktop */
+/* Hamburger Styles */
 .hamburger-btn {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-dark);
+  z-index: 1001;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 850px) {
+  .hamburger-btn {
+    display: block;
+  }
+
+  .desktop-only {
     display: none;
-    background: none;
-    border: none;
-    cursor: pointer;
-    color: #142922;
-    z-index: 1001;
-    /* Stay above the menu */
-}
+  }
 
-.mobile-only-actions {
-    display: none;
-}
+  .linkDiv1 {
+    position: fixed;
+    top: 0;
+    right: -100%; /* Hidden off-screen */
+    width:   60%;
+    height: 450px;
+    background: #83ec8a;
+    flex-direction: column;
+    padding: 100px 40px;
+    align-items: flex-start;
+    transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: -10px 0 30px rgba(0,0,0,0.1);
+    z-index: 1000;
+  }
 
+  .linkDiv1.nav-active {
+    right: 0;
+  }
 
-/* ==========================================
-   MOBILE STYLES (Breakpoint: 768px)
-   ========================================== */
-@media (max-width: 768px) {
-    .hamburger-btn {
-        display: block;
-    }
+  .mobile-only-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    margin-top: 40px;
+    padding-top: 40px;
+    border-top: 1px solid #f1f5f9;
+  }
 
-    /* Hide the normal link div on mobile */
-    .linkDiv1 {
-        display: none;
-    }
+  .nav-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.3);
+    z-index: 999;
+  }
 
-    git
-    /* Hide desktop-only auth buttons */
-    /* .desktop-only {
-        display: none;
-    } */
-
-    /* THE MOBILE MENU (Slide-in Overlay) */
-    .nav-active {
-        /* position: fixed;
-        top: 0;
-        right: 0;
-        height: 80%;
-        width: 100%;
-        background-color: #ffffff;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 40px;
-        transition: transform 0.4s cubic-bezier(0.77, 0.2, 0.05, 1.0);
-        z-index: 999; */
-    }
-
-    /* Add auth items into the mobile flex flow */
-    .nav-active::after {
-        content: "";
-        /* Placeholder for logical flow */
-    }
-
-    /* Stylizing Links inside Mobile Menu */
-    .nav-active .whyT {
-        font-size: 24px;
-        font-weight: 700;
-    }
-
-    /* You can add custom styles for buttons when they are inside the menu */
-    /* If you want Login/Get Started to appear in the menu, 
-       ensure your React logic includes them in the nav-active container */
-}
-
-.mobile-only-actions {
-    font-size: small;
-    background-color: #278f2e;
+  .navLink{
+    color: #000000;
+  }
 }

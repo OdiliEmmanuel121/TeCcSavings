@@ -1,7 +1,7 @@
 import React, { useState } from 'react'; // Ensure useState is imported
 import './Whytecc.css'
 import iphone from '../../../assets/iphone.png'
-import { ArrowCircleLeft, ArrowCircleRight, Facebook, Instagram, Twitter, WhatsApp } from '@mui/icons-material'
+import { ArrowCircleLeft, ArrowCircleRight, Facebook, Instagram, LinkedIn, Twitter, WhatsApp } from '@mui/icons-material'
 import adrons from '../../../assets/adrons.jpg'
 import hisense from '../../../assets/hisense.jpg'
 import wwe from '../../../assets/wwe.png'
@@ -188,7 +188,7 @@ const Whytecc = () => {
         </div>
       </section>
 
-      
+
       {/* --- MODIFIED EIGHTSECTION START --- */}
       <div className='eightsection'>
         <div className='eightcard'>
@@ -325,51 +325,57 @@ const Whytecc = () => {
         </div>
       </div>
 
-      <div className='footersection'>
-        <div className='footermain1'>
-          <h1 className='footerheading1'>Tecc Savings</h1>
-          <h1 className='footersecondheading5'>Global naira <br /> investment made <br /> easy</h1>
-        </div>
-        <div className='footermain2'>
-          <div className='footersplit'>
-            <div className='footersecondheadingdiv1'>
-              <h1 className='footerheading2'>Company</h1>
-              <a className='footeranc1' href="#">About us </a>
-              <a className='footeranc1' href="#">Professions</a>
-              <a className='footeranc1' href="#">FAQs</a>
-              <a className='footeranc1' href="#">Weekly newsletter</a>
+      <footer className='FooterSection'>
+        <div className='FooterContainer'>
+          {/* Brand Section */}
+          <div className='FooterBrand'>
+            <h2 className='FooterLogo'>Tecc Savings</h2>
+            <p className='FooterTagline'>Global naira investment <br /> made easy.</p>
+          </div>
+
+          {/* Links Grid */}
+          <div className='FooterLinksGrid'>
+            <div className='FooterColumn'>
+              <h3>Company</h3>
+              <a href="#">About us</a>
+              <a href="#">Professions</a>
+              <a href="#">FAQs</a>
+              <a href="#">Weekly newsletter</a>
             </div>
-            <div className='footersecondheadingdiv2'>
-              <h1 className='footerheading3'>Resources</h1>
-              <a className='footeranc2' href="#">Why Tecc</a>
-              <a className='footeranc2' href="#">Tecc business</a>
-              <a className='footeranc2' href="#">Developer</a>
+
+            <div className='FooterColumn'>
+              <h3>Resources</h3>
+              <a href="#">Why Tecc</a>
+              <a href="#">Tecc business</a>
+              <a href="#">Developer</a>
             </div>
-            <div className='footersecondheadingdiv3'>
-              <h1 className='footerheading4'>Official</h1>
-              <a className='footeranc3' href="#">Private Policy</a>
-              <a className='footeranc3' href="#">Dislosure</a>
-              <a className='footeranc3' href="#">Go for growth</a>
+
+            <div className='FooterColumn'>
+              <h3>Official</h3>
+              <a href="#">Privacy Policy</a>
+              <a href="#">Disclosure</a>
+              <a href="#">Go for growth</a>
             </div>
-            <div className='footersecondheadingdiv4'>
-              <h1 className='footerheading5'>Contact us</h1>
-              <a className='footeranc4' href="#">0700 2374 2356</a>
-              <a className='footeranc4' href="#">Hello@teccgrowth</a>
+
+            <div className='FooterColumn'>
+              <h3>Contact us</h3>
+              <a href="tel:070023742356">0700 2374 2356</a>
+              <a href="mailto:Hello@teccgrowth.com">Hello@teccgrowth.com</a>
             </div>
           </div>
         </div>
 
-        <div className='footer' >
-          <p className='footertext'>&copy; 2026 Tecc Savings Technology . All rights reserved.</p>
-          <div className='socialink'>
-            <a className='facebook' href="#" > < Facebook /> facebook</a>
-            <a className='instagram' href="#" > <Instagram /> instagram</a>
-            <a className='twitter' href="#" > <Twitter /> twitter</a>
-            <a className='whatsapp' href="#" > <WhatsApp /> whatsapp</a>
-          </div>
+        <div className='FooterBottom'>
+          <p>&copy; 2026 Tecc Savings Technology. All rights reserved.</p>
+          <div className='SocialLinks'>
+            <a href="#" className='SocialIcon1'><Facebook size={10} /></a>
+            <a href="#" className='SocialIcon2'><Instagram size={10} /></a>
+            <a href="#" className='SocialIcon3'><Twitter size={10} /></a>
+            <a href="#" className='SocialIcon4'><WhatsApp size={10} /></a>
+            <a href="#" className='SocialIcon5'><LinkedIn size={10} /></a>
         </div>
-
-      </div>
+        </div>
+      </footer>
     </div>
   )
 }

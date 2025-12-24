@@ -44,7 +44,8 @@
 /* Individual Glass Cards */
 .GoCard {
     background: rgba(255, 255, 255, 0.7);
-    backdrop-filter: blur(10px); /* Frosted Glass Effect */
+    backdrop-filter: blur(10px);
+    /* Frosted Glass Effect */
     padding: 40px;
     border-radius: 32px;
     border: 1px solid rgba(255, 255, 255, 0.5);
@@ -57,7 +58,8 @@
 }
 
 .GoCard.highlighted {
-    background: #142922; /* Deep dark green for contrast */
+    background: #142922;
+    /* Deep dark green for contrast */
     color: white;
 }
 
@@ -109,7 +111,8 @@
     gap: 20px;
 }
 
-.cardbutton1, .cardbutton2 {
+.cardbutton1,
+.cardbutton2 {
     padding: 18px 40px;
     border-radius: 100px;
     text-decoration: none;
@@ -144,8 +147,11 @@
         flex-direction: column;
         align-items: center;
     }
-    .cardbutton1, .cardbutton2 {
+
+    .cardbutton1,
+    .cardbutton2 {
         width: 100%;
         justify-content: center;
     }
 }
+
