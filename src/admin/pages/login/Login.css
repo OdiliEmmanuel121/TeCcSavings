@@ -4,7 +4,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 100px; /* Reduced from 300px for a tighter, professional look */
+    gap: 100px;
+    /* Reduced from 300px for a tighter, professional look */
     background: linear-gradient(135deg, #f8faf9 0%, #e2ee e6 100%);
     padding: 20px;
     font-family: 'Inter', -apple-system, sans-serif;
@@ -52,7 +53,8 @@
 }
 
 /* INPUT STYLES */
-.loginEmail, .loginPassword {
+.loginEmail,
+.loginPassword {
     width: 100%;
     padding: 14px 16px;
     margin-bottom: 15px;
@@ -60,10 +62,12 @@
     border: 1.5px solid #e0e0e0;
     font-size: 16px;
     transition: all 0.3s ease;
-    box-sizing: border-box; /* Fixes padding overflow */
+    box-sizing: border-box;
+    /* Fixes padding overflow */
 }
 
-.loginEmail:focus, .loginPassword:focus {
+.loginEmail:focus,
+.loginPassword:focus {
     outline: none;
     border-color: #278f2e;
     box-shadow: 0 0 0 4px rgba(39, 143, 46, 0.1);
@@ -79,7 +83,8 @@
     position: absolute;
     right: 12px;
     top: 50%;
-    transform: translateY(-75%); /* Aligns with input center */
+    transform: translateY(-75%);
+    /* Aligns with input center */
     background: none;
     border: none;
     color: #888;
@@ -92,8 +97,10 @@
 /* BUTTONS - FIXED LAYOUT */
 .loginButton {
     display: flex;
-    justify-content: center; /* This replaces padding-left: 230px */
+    justify-content: center;
+    /* This replaces padding-left: 230px */
     align-items: center;
+    width: 100%;
     background-color: #278f2e;
     color: white;
     text-decoration: none;
@@ -102,13 +109,16 @@
     font-weight: 600;
     margin-top: 25px;
     transition: background 0.3s ease;
+    border-style: solid;
+    border-color: #278f2e;
 }
 
 .loginButton:hover {
     background-color: #1e6d23;
 }
 
-.loginButton2, .loginButton3 {
+.loginButton2,
+.loginButton3 {
     display: flex;
     justify-content: center;
     text-decoration: none;
@@ -120,6 +130,8 @@
 
 .loginButton2 {
     color: #666;
+    border: none;
+
 }
 
 .loginButton3 {
@@ -127,32 +139,158 @@
     margin-top: 20px;
 }
 
-.loginButton2:hover, .loginButton3:hover {
+.loginButton2:hover,
+.loginButton3:hover {
     opacity: 0.7;
 }
 
 /* RIGHT SIDE: ANIMATED IMAGE */
 .iphoneimgup {
     width: 400px;
-    filter: drop-shadow(0 30px 50px rgba(0,0,0,0.15));
+    filter: drop-shadow(0 30px 50px rgba(0, 0, 0, 0.15));
     animation: floatVertical 5s ease-in-out infinite;
 }
 
 @keyframes floatVertical {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-30px); } /* Subtle float is more "premium" */
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-30px);
+    }
+
+    /* Subtle float is more "premium" */
 }
+
+
+
+/* --- Modal Overlay --- */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(13, 27, 16, 0.85);
+    /* Dark green tint */
+    backdrop-filter: blur(8px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    padding: 20px;
+}
+
+/* --- Modal Card --- */
+.forgot-modal-card {
+    background: white;
+    width: 100%;
+    max-width: 450px;
+    padding: 50px 40px;
+    border-radius: 24px;
+    position: relative;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    text-align: center;
+    animation: slideUpFade 0.4s ease-out;
+}
+
+.forgot-modal-card h2 {
+    color: #142922;
+    font-size: 28px;
+    font-weight: 800;
+    margin-bottom: 12px;
+}
+
+.forgot-modal-card p {
+    color: #64748b;
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.close-modal {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: #f1f5f9;
+    border: none;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #64748b;
+    transition: 0.3s;
+}
+
+.close-modal:hover {
+    background: #ff4d4d;
+    color: white;
+}
+
+/* --- Success State --- */
+.success-icon-wrap {
+    width: 80px;
+    height: 80px;
+    background: #ecfdf5;
+    color: #278f2e;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 25px auto;
+}
+
+.success-icon-wrap svg {
+    font-size: 40px;
+}
+
+/* --- Animations --- */
+@keyframes slideUpFade {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Reset Button Styles for consistency */
+.loginButton2 {
+    background: none;
+    border: none;
+    color: #278f2e;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.loginButton2:hover {
+    text-decoration: underline;
+}
+
+
 
 /* MOBILE RESPONSIVENESS */
 @media (max-width: 1024px) {
     .loginContainer {
-        flex-direction: column-reverse; /* Image on top, form below */
+        flex-direction: column-reverse;
+        /* Image on top, form below */
         gap: 40px;
         text-align: center;
     }
-    
+
     .iphoneimgup {
-       display: none;
+        display: none;
     }
 
     .visiblepassword {

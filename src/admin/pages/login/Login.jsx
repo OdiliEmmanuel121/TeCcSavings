@@ -1,23 +1,26 @@
 import React, { useState } from 'react';
-import {
-  Visibility,
-  VisibilityOff,
-  ArrowBackIosOutlined
-} from '@mui/icons-material';
-import './Login.css'
-import efx1 from '../../../assets/efx1.png'
+import { Visibility, VisibilityOff, Close, MarkEmailRead } from '@mui/icons-material';
 import { Link } from 'react-router-dom';
-
-
+import './Login.css';
+import efx1 from '../../../assets/efx1.png';
 
 const Login = () => {
-  // 1. State should be at the top level of the component
   const [password, setPassword] = useState('');
   const [email, setEmail] = useState('');
+  const [resetEmail, setResetEmail] = useState('');
   const [showPassword, setShowPassword] = useState(false);
+  
+  // Modal States
+  const [showModal, setShowModal] = useState(false);
+  const [isEmailSent, setIsEmailSent] = useState(false);
 
-  // 2. Logic for validation
   const isStrong = password.length >= 8 && /[A-Z]/.test(password) && /[0-9]/.test(password);
+
+  const handleForgotSubmit = (e) => {
+    e.preventDefault();
+    // Simulate API call
+    setIsEmailSent(true);
+  };
 
   return (
     <div className='loginContainer'>
@@ -27,50 +30,64 @@ const Login = () => {
         <p className='loginclassh3'>Please enter your sign-in details to continue.</p>
 
         <div className='logincard'>
-          {/* Email Input */}
-          <input
-            type="text"
-            placeholder='Email address'
-            className='loginEmail'
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-
-          {/* Password Wrapper */}
+          <input type="text" placeholder='Email address' className='loginEmail' value={email} onChange={(e) => setEmail(e.target.value)} />
           <div className="password-wrapper">
-            <input
-              type={showPassword ? 'text' : 'password'}
-              placeholder='Password'
-              className='loginPassword'
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            />
-
-            {/* Toggle Button */}
-            <button
-              type="button"
-              onClick={() => setShowPassword(!showPassword)}
-              className='visiblepassword'
-            >
+            <input type={showPassword ? 'text' : 'password'} placeholder='Password' className='loginPassword' value={password} onChange={(e) => setPassword(e.target.value)} />
+            <button type="button" onClick={() => setShowPassword(!showPassword)} className='visiblepassword'>
               {showPassword ? <VisibilityOff fontSize="small" /> : <Visibility fontSize="small" />}
             </button>
           </div>
 
-          {/* Password Strength Feedback */}
           {password.length > 0 && (
-            <p style={{ color: isStrong ? 'green' : 'red', fontSize: '12px', marginTop: '8px', margin: '20px' }}>
+            <p style={{ color: isStrong ? '#278f2e' : '#ff4d4d', fontSize: '12px', margin: '10px 20px' }}>
               {isStrong ? '✓ Strong password' : 'Password Must be 8+ chars, include uppercase & number'}
             </p>
           )}
-          <a className='loginButton' href="#">Log in </a>
-          <a className='loginButton2' href="#">Forgot password</a>
+
+          <button className='loginButton'>Log in</button>
+          {/* TRIGGER MODAL */}
+          <button className='loginButton2' onClick={() => setShowModal(true)}>Forgot password</button>
           <Link className='loginButton3' to="/getstarted">Create account</Link>
         </div>
       </div>
+
       <div>
         <img src={efx1} alt="efx" className='iphoneimgup' />
       </div>
 
+      {/* --- FORGOT PASSWORD MODAL --- */}
+      {showModal && (
+        <div className='modal-overlay'>
+          <div className='forgot-modal-card'>
+            <button className='close-modal' onClick={() => {setShowModal(false); setIsEmailSent(false);}}><Close /></button>
+            
+            {!isEmailSent ? (
+              <>
+                <h2>Reset Password</h2>
+                <p>Enter the email associated with your account and we'll send a link to reset your password.</p>
+                <form onSubmit={handleForgotSubmit}>
+                  <input 
+                    type="email" 
+                    required 
+                    placeholder="Enter your email" 
+                    className='loginEmail' 
+                    value={resetEmail}
+                    onChange={(e) => setResetEmail(e.target.value)}
+                  />
+                  <button type="submit" className='loginButton'>Send Reset Link</button>
+                </form>
+              </>
+            ) : (
+              <div className='success-state'>
+                <div className='success-icon-wrap'><MarkEmailRead /></div>
+                <h2>Check your email</h2>
+                <p>We've sent a password reset link to <strong>{resetEmail}</strong>. Please check your inbox.</p>
+                <button className='loginButton' onClick={() => setShowModal(false)}>Back to Login</button>
+              </div>
+            )}
+          </div>
+        </div>
+      )}
     </div>
   );
 };
