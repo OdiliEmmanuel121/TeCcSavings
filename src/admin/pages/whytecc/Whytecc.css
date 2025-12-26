@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap');
 
-.whyteccContainer{
+.whyteccContainer {
     margin-top: 60px;
 }
 
@@ -11,7 +11,8 @@
     align-items: center;
     padding: 80px 5%;
     min-height: 80vh;
-    background: radial-gradient(circle at top right, #f0fdf4, #ffffff); /* Subtle premium background */
+    background: radial-gradient(circle at top right, #f0fdf4, #ffffff);
+    /* Subtle premium background */
     overflow: hidden;
 }
 
@@ -19,7 +20,8 @@
 .firstSectionh1 {
     flex: 1;
     font-family: 'Inter', -apple-system, sans-serif;
-    font-size: clamp(32px, 5vw, 64px); /* Fluid font size */
+    font-size: clamp(32px, 5vw, 64px);
+    /* Fluid font size */
     font-weight: 800;
     line-height: 1.1;
     color: #142922;
@@ -29,13 +31,14 @@
 
 /* Image Wrapper Strategy */
 /* We style the images to overlap slightly for a 3D depth effect */
-.iphoneimg, 
+.iphoneimg,
 .iphoneimg1 {
     width: 25%;
     max-width: 350px;
     height: auto;
     object-fit: contain;
-    filter: drop-shadow(0 20px 50px rgba(0,0,0,0.1)); /* Soft realistic shadow */
+    filter: drop-shadow(0 20px 50px rgba(0, 0, 0, 0.1));
+    /* Soft realistic shadow */
 }
 
 /* Primary Phone Image */
@@ -48,19 +51,25 @@
 .iphoneimg1 {
     position: relative;
     z-index: 1;
-    margin-right: -12%; /* Creates a professional overlap */
-    animation: floatVertical 1.5s ease-in-out infinite; /* Smoother, slower float */
+    margin-right: -12%;
+    /* Creates a professional overlap */
+    animation: floatVertical 1.5s ease-in-out infinite;
+    /* Smoother, slower float */
 }
 
 /* --- Professional Animations --- */
 
 /* Smooth Floating (Reduced distance for elegance) */
 @keyframes floatVertical {
-    0%, 100% {
+
+    0%,
+    100% {
         transform: translateY(0px);
     }
+
     50% {
-        transform: translateY(-30px); /* 150px was too aggressive; 30px is premium */
+        transform: translateY(-30px);
+        /* 150px was too aggressive; 30px is premium */
     }
 }
 
@@ -70,6 +79,7 @@
         opacity: 0;
         transform: translateX(-20px);
     }
+
     to {
         opacity: 1;
         transform: translateX(0);
@@ -89,7 +99,7 @@
         order: 1;
     }
 
-    .iphoneimg, 
+    .iphoneimg,
     .iphoneimg1 {
         width: 50%;
         margin: 0;
@@ -97,8 +107,10 @@
     }
 
     .iphoneimg1 {
-        margin-top: -100px; /* Overlap on mobile */
-        opacity: 0.6; /* De-emphasize secondary image on small screens */
+        margin-top: -100px;
+        /* Overlap on mobile */
+        opacity: 0.6;
+        /* De-emphasize secondary image on small screens */
     }
 }
 
@@ -159,6 +171,86 @@
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     white-space: nowrap;
     /* Prevents text from wrapping */
+}
+
+/* Ensure the overlay covers everything */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    /* Darker backdrop */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 5000;
+    /* Higher than other elements */
+    backdrop-filter: blur(4px);
+}
+
+.modal-content {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    position: relative;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    font-family: sans-serif;
+}
+
+.close-x {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 34px;
+    cursor: pointer;
+}
+
+/* Style for the Get Started Link in Popup */
+.GetStartedBtn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 30px;
+    background-color: #00d094;
+    /* Your brand green */
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+/* Download Store Buttons */
+.store-flex {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.store-btn {
+    background-color: #0d1b10;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+/* Ensure the buttons in thirdsection behave like buttons */
+.cardbutton1,
+.cardbutton2 {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /* --- PRIMARY BUTTON (Start Investing) --- */
@@ -389,7 +481,8 @@
 
 .meet {
     font-family: 'Inter', sans-serif;
-    font-size: clamp(24px, 5vw, 36px); /* Fluid size for mobile/desktop */
+    font-size: clamp(24px, 5vw, 36px);
+    /* Fluid size for mobile/desktop */
     font-weight: 800;
     color: #0d1b10;
     position: relative;
@@ -420,12 +513,14 @@
 }
 
 /* --- IFRAME STYLING --- */
-.video1, 
-.video2, 
+.video1,
+.video2,
 .video3 {
-    width: 100% !important; /* Overrides the fixed width in HTML */
+    width: 100% !important;
+    /* Overrides the fixed width in HTML */
     height: auto !important;
-    aspect-ratio: 16 / 9;   /* Maintains perfect widescreen shape */
+    aspect-ratio: 16 / 9;
+    /* Maintains perfect widescreen shape */
     border-radius: 16px;
     border: none;
     background-color: #f1f5f9;
@@ -434,8 +529,8 @@
 }
 
 /* Subtle hover interaction */
-.video1:hover, 
-.video2:hover, 
+.video1:hover,
+.video2:hover,
 .video3:hover {
     transform: translateY(-5px);
     box-shadow: 0 15px 30px rgba(39, 143, 46, 0.15);
@@ -449,7 +544,8 @@
 
     .videosection {
         gap: 20px;
-        grid-template-columns: 1fr; /* Force single column on phones */
+        grid-template-columns: 1fr;
+        /* Force single column on phones */
     }
 
     .meet {
@@ -668,7 +764,8 @@
 
 /* Section Background */
 .nightsection {
-    background-color: #17311c; /* Match your brand's deep green */
+    background-color: #17311c;
+    /* Match your brand's deep green */
     padding: 100px 5%;
     text-align: center;
     color: white;
@@ -707,7 +804,8 @@
 .team-card:hover {
     background: rgba(255, 255, 255, 0.07);
     transform: translateY(-10px);
-    border-color: #278f2e; /* Brand Green */
+    border-color: #278f2e;
+    /* Brand Green */
 }
 
 /* Image Styling */
@@ -715,7 +813,8 @@
     width: 380px;
     height: 280px;
     margin: 0 auto 25px auto;
-    border-radius: 50%; /* Circular images */
+    border-radius: 50%;
+    /* Circular images */
     overflow: hidden;
     border: 3px solid #278f2e;
 }
@@ -723,7 +822,8 @@
 .member-img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ensures photo isn't stretched */
+    object-fit: cover;
+    /* Ensures photo isn't stretched */
     transition: transform 0.5s ease;
 }
 
@@ -743,7 +843,8 @@
     font-size: 34px;
     text-transform: uppercase;
     letter-spacing: 2px;
-    color: #278f2e; /* Use brand green for the role */
+    color: #278f2e;
+    /* Use brand green for the role */
     font-weight: 600;
 }
 
@@ -752,11 +853,13 @@
     .nightsection {
         padding: 60px 20px;
     }
-    
+
     .team-grid {
-        grid-template-columns: 1fr; /* Single column on phones */
+        grid-template-columns: 1fr;
+        /* Single column on phones */
     }
 }
+
 .tenthsection {
     box-shadow: 0 4px 10px rgba(0.5, 1, 1, 0.5);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -844,7 +947,8 @@
 
 /* --- Section Container --- */
 .eleventhsection {
-    background-color: #0d1b10; /* Deep premium green */
+    background-color: #0d1b10;
+    /* Deep premium green */
     padding: 100px 5%;
     text-align: center;
     border-radius: 40px;
@@ -871,7 +975,8 @@
 .billi-stack {
     display: flex;
     justify-content: center;
-    padding-left: 20px; /* Counter-offsets the negative margin */
+    padding-left: 20px;
+    /* Counter-offsets the negative margin */
 }
 
 .billi-img {
@@ -880,7 +985,8 @@
     border-radius: 50%;
     object-fit: cover;
     border: 4px solid #0d1b10;
-    margin-left: -20px; /* This creates the professional overlap */
+    margin-left: -20px;
+    /* This creates the professional overlap */
     transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
@@ -907,12 +1013,14 @@
 .billih1 {
     font-size: clamp(20px, 3vw, 26px);
     font-weight: 400;
-    color: #94a3b8; /* Muted slate for the question */
+    color: #94a3b8;
+    /* Muted slate for the question */
     margin-bottom: 10px;
 }
 
 .billih12 {
-    font-size: clamp(40px, 7vw, 80px); /* Massive impactful text */
+    font-size: clamp(40px, 7vw, 80px);
+    /* Massive impactful text */
     font-weight: 900;
     color: #4CAF50;
     margin-bottom: 25px;
@@ -929,23 +1037,31 @@
 }
 
 /* --- CTA Button --- */
+
 .joincircle {
-    display: inline-block;
-    padding: 20px 50px;
-    background-color: #4CAF50;
+    cursor: pointer;
+    border: none;
+    background-color: #00d094;
+    /* Match your brand color */
     color: white;
-    text-decoration: none;
-    font-weight: 700;
-    font-size: 18px;
-    border-radius: 100px;
-    transition: all 0.3s ease;
-    box-shadow: 0 10px 30px rgba(76, 175, 80, 0.3);
+    padding: 15px 30px;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: 600;
+    transition: transform 0.2s ease;
 }
 
 .joincircle:hover {
-    background-color: #45a049;
-    transform: translateY(-5px);
-    box-shadow: 0 15px 40px rgba(76, 175, 80, 0.5);
+    transform: scale(1.05);
+}
+
+/* Style for the Login Link inside the popup */
+.Login {
+    transition: opacity 0.2s;
+}
+
+.Login:hover {
+    opacity: 0.8;
 }
 
 /* --- Responsive Adjustments --- */
@@ -962,7 +1078,8 @@
     }
 
     .joincircle {
-        width: 100%; /* Mobile button becomes full width */
+        width: 100%;
+        /* Mobile button becomes full width */
         box-sizing: border-box;
     }
 }
@@ -975,11 +1092,12 @@
     text-decoration: none;
     font-weight: 700;
     font-size: 18px;
-    border-radius: 100px; /* Fully rounded pill shape */
+    border-radius: 100px;
+    /* Fully rounded pill shape */
     transition: all 0.2s ease;
     box-shadow: 0 10px 25px rgba(76, 175, 80, 0.3);
     margin-top: 30px;
-    
+
 }
 
 .joincircle:hover {
@@ -996,16 +1114,20 @@
         border-radius: 24px;
     }
 
-    .billi1, .billi2, .billi3 {
+    .billi1,
+    .billi2,
+    .billi3 {
         width: 70px;
         height: 70px;
     }
 
     .joincircle {
-        width: 100%; /* Full width button on small screens */
+        width: 100%;
+        /* Full width button on small screens */
         box-sizing: border-box;
     }
 }
+
 .twelvesection {
     display: flex;
     flex-direction: column;
@@ -1238,141 +1360,216 @@
 }
 
 .FooterSection {
-  background-color: #0b2c19; /* Deep Navy Blue */
-  color: #ffffff;
-  padding: 100px 40px 40px;
-  font-family: 'Inter', sans-serif;
-  margin-top: 40px;
+    background-color: #0b2c19;
+    /* Deep Navy Blue */
+    color: #ffffff;
+    padding: 100px 40px 40px;
+    font-family: 'Inter', sans-serif;
+    margin-top: 40px;
 }
 
 .FooterContainer {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 2fr; /* Brand takes 1/3, Links take 2/3 */
-  gap: 60px;
-  margin-bottom: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    /* Brand takes 1/3, Links take 2/3 */
+    gap: 60px;
+    margin-bottom: 60px;
 }
 
 /* Brand Styles */
 .FooterLogo {
-  font-size: 1.5rem;
-  font-weight: 800;
-  color:#ffffff; /* Electric Blue */
-  margin-bottom: 20px;
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #ffffff;
+    /* Electric Blue */
+    margin-bottom: 20px;
 }
 
 .FooterTagline {
-  font-size: 1.25rem;
-  line-height: 1.4;
-  color: #a9b9b2;
-  font-weight: 500;
+    font-size: 1.25rem;
+    line-height: 1.4;
+    color: #a9b9b2;
+    font-weight: 500;
 }
 
 /* Links Grid */
 .FooterLinksGrid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 30px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
 }
 
 .FooterColumn h3 {
-  font-size: 0.9rem;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: #ffffff;
-  margin-bottom: 24px;
-  font-weight: 700;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #ffffff;
+    margin-bottom: 24px;
+    font-weight: 700;
 }
 
 .FooterColumn a {
-  display: block;
-  color: #43b49c;
-  text-decoration: none;
-  margin-bottom: 12px;
-  font-size: 0.95rem;
-  transition: color 0.3s ease;
+    display: block;
+    color: #43b49c;
+    text-decoration: none;
+    margin-bottom: 12px;
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
 }
 
 .FooterColumn a:hover {
-  color: #1b5c4e;
+    color: #1b5c4e;
+}
+
+.FooterDownloadArea {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    /* Subtle line separator */
+    margin: 0 5%;
+}
+
+.footer-store-btn {
+    background-color: #000;
+    /* Sleek black button */
+    color: #fff;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    border: 1px solid #333;
+    transition: all 0.3s ease;
+}
+
+.footer-store-btn:hover {
+    background-color: #00d094;
+    /* Your brand green on hover */
+    border-color: #00d094;
+    transform: translateY(-2px);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .FooterDownloadArea {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
 }
 
 /* Bottom Bar */
 .FooterBottom {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding-top: 40px;
-  border-top: 1px solid #1e293b;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 40px;
+    border-top: 1px solid #1e293b;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .FooterBottom p {
-  color:#a5a1a2;
-  font-size: 0.85rem;
+    color: #a5a1a2;
+    font-size: 0.85rem;
 }
 
 /* Social Media */
 .SocialLinks {
-  display: flex;
-  gap: 10px;
+    display: flex;
+    gap: 10px;
 }
 
 .SocialIcon1 {
-  color: rgb(55, 140, 209);
-  transition: transform 0.3s ease, color 0.3s ease;
-}
-.SocialIcon2 {
-  color: rgb(161, 37, 48);
-  transition: transform 0.3s ease, color 0.3s ease;
+    color: rgb(55, 140, 209);
+    transition: transform 0.3s ease, color 0.3s ease;
 }
 
-.SocialIcon3{
-  color: rgb(36, 161, 161);
-  transition: transform 0.3s ease, color 0.3s ease;
+.SocialIcon2 {
+    color: rgb(161, 37, 48);
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.SocialIcon3 {
+    color: rgb(36, 161, 161);
+    transition: transform 0.3s ease, color 0.3s ease;
 }
 
 .SocialIcon4 {
-  color: rgb(7, 110, 41);
-  transition: transform 0.3s ease, color 0.3s ease;
+    color: rgb(7, 110, 41);
+    transition: transform 0.3s ease, color 0.3s ease;
 }
 
 .SocialIcon5 {
-  color: rgb(133, 145, 179);
-  transition: transform 0.3s ease, color 0.3s ease;
+    color: rgb(133, 145, 179);
+    transition: transform 0.3s ease, color 0.3s ease;
 }
 
+.SocialLinks a {
+    transition: transform 0.3s ease, color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
-.SocialIcon1:hover, .SocialIcon2:hover, .SocialIcon3:hover, .SocialIcon4:hover, .SocialIcon5:hover {
-  color: #12ca74;
-  transform: translateY(-3px);
+.SocialLinks a:hover {
+    transform: translateY(-3px);
+    /* Lifts the icon slightly */
+    opacity: 0.7;
+}
+
+/* Specific Brand Colors on Hover (Optional) */
+.SocialIcon1:hover {
+    color: #1877F2;
+}
+
+/* Facebook Blue */
+.SocialIcon2:hover {
+    color: #E4405F;
+}
+
+/* Instagram Pink */
+.SocialIcon3:hover {
+    color: #1DA1F2;
+}
+
+/* Twitter Blue */
+.SocialIcon4:hover {
+    color: #25D366;
+}
+
+/* WhatsApp Green */
+.SocialIcon5:hover {
+    color: #0077B5;
 }
 
 /* Responsive Design */
 @media (max-width: 968px) {
-  .FooterContainer {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-  
-  .FooterLinksGrid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 40px;
-  }
+    .FooterContainer {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .FooterLinksGrid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px;
+    }
 }
 
 @media (max-width: 480px) {
-  .FooterLinksGrid {
-    grid-template-columns: 1fr;
-  }
-  
-  .FooterBottom {
-    flex-direction: column;
-    gap: 20px;
-    text-align: center;
-  }
+    .FooterLinksGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .FooterBottom {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
 }
 
 

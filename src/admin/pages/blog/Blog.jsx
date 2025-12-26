@@ -96,6 +96,12 @@ const Blog = () => {
           </div>
         </div>
       </div>
+
+      <div className='boy'>
+       <h1 className='boytxt' >i ama boy</h1>
+      </div>
+
+
       <div className='tenthsection'>
         <div>
           <h1 className='news'>Weekly newsletter</h1>

@@ -39,20 +39,28 @@
   align-items: center;
 }
 
+.linkDiv2 {
+  align-items: center;
+}
+
+
+
 .navLink {
   text-decoration: none;
   color: var(--text-dark);
   font-weight: 500;
   font-size: 0.95rem;
   transition: color 0.2s;
+  font-family: sans-serif;
+  font-size: larger;
 }
 
 .navLink:hover {
   color: green;
 }
 
-.mobile-only-actions{
-    display: none;
+.mobile-only-actions {
+  display: none;
 }
 
 /* Buttons */
@@ -61,16 +69,21 @@
   color: var(--text-dark);
   font-weight: 600;
   margin-right: 20px;
+  font-family: sans-serif;
+  color:#25812b;
+
 }
 
 .GetStartedBtn {
   text-decoration: none;
-  background:#25812b;
+  background: #25812b;
   color: white;
   padding: 12px 24px;
   border-radius: 8px;
   font-weight: 600;
   transition: transform 0.2s, background 0.2s;
+  font-family: sans-serif;
+  /* font-size: larger; */
 }
 
 .GetStartedBtn:hover {
@@ -88,6 +101,10 @@
   z-index: 1001;
 }
 
+.Login:hover {
+  color: rgb(4, 31, 4);
+}
+
 /* Mobile Responsiveness */
 @media (max-width: 850px) {
   .hamburger-btn {
@@ -101,16 +118,18 @@
   .linkDiv1 {
     position: fixed;
     top: 0;
-    right: -100%; /* Hidden off-screen */
-    width:   60%;
-    height: 450px;
-    background: #83ec8a;
+    right: -100%;
+    /* Hidden off-screen */
+    width: 100%;
+    height: 620px;
+    background: #dce4dd;
     flex-direction: column;
     padding: 100px 40px;
-    align-items: flex-start;
+    align-items: center;
     transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: -10px 0 30px rgba(0,0,0,0.1);
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.1);
     z-index: 1000;
+
   }
 
   .linkDiv1.nav-active {
@@ -125,6 +144,7 @@
     margin-top: 40px;
     padding-top: 40px;
     border-top: 1px solid #f1f5f9;
+    font-size: larger;
   }
 
   .nav-overlay {
@@ -133,11 +153,14 @@
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: rgba(0,0,0,0.3);
+    background: rgba(0, 0, 0, 0.3);
     z-index: 999;
   }
 
-  .navLink{
+  .navLink {
     color: #000000;
+    font-weight: 750;
+    font-family: sans-serif;
+    font-size: larger;
   }
 }

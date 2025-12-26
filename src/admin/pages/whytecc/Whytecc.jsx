@@ -23,12 +23,22 @@ import savemoney from '../../../assets/savemoney.jpg'
 import growmoney from '../../../assets/growmoney.jpg'
 import interestmoney from '../../../assets/interestmoney.jpg'
 import vacationmoney from '../../../assets/vacationmoney.jpg'
+// import { ArrowCircleRight, XCircle } from '@mui/icons-material';
+import { Link } from 'react-router-dom';
+
+
 
 const Whytecc = () => {
   // --- CALCULATOR LOGIC START ---
   const [monthlyEarn, setMonthlyEarn] = useState(5000);
   const [investPercent, setInvestPercent] = useState(20);
   const [years, setYears] = useState(45);
+  const [showInvestModal, setShowInvestModal] = useState(false);
+  const [showDownloadModal, setShowDownloadModal] = useState(false);
+
+
+  // NEW STATE for Join Circle Popup
+  const [showJoinModal, setShowJoinModal] = useState(false);
 
   const annualReturnRate = 0.10; // 10% annual return
   const monthlyInvestment = (monthlyEarn * (investPercent / 100));
@@ -82,9 +92,39 @@ const Whytecc = () => {
       </div>
 
       <div className='thirdsection'>
-        <a className='cardbutton1' href="#">Start investing  < ArrowCircleRight /> </a>
-        <a className='cardbutton2' href="#">Download app < ArrowCircleRight /> </a>
+        <button className='cardbutton1' onClick={() => setShowInvestModal(true)}>
+          Start investing <ArrowCircleRight />
+        </button>
+        <button className='cardbutton2' onClick={() => setShowDownloadModal(true)}>
+          Download app <ArrowCircleRight />
+        </button>
       </div>
+      {/* --- POPUP 1: START INVESTING --- */}
+      {showInvestModal && (
+        <div className="modal-overlay" onClick={() => setShowInvestModal(false)}>
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+            <button className="close-x" onClick={() => setShowInvestModal(false)}>×</button>
+            <h2>Ready to grow?</h2>
+            <p>Join thousands of Nigerians building wealth with Tecc.</p>
+            <Link className='GetStartedBtn' to="/getstarted">Get Started</Link>
+          </div>
+        </div>
+      )}
+
+      {/* --- POPUP 2: DOWNLOAD APP --- */}
+      {showDownloadModal && (
+        <div className="modal-overlay" onClick={() => setShowDownloadModal(false)}>
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+            <button className="close-x" onClick={() => setShowDownloadModal(false)}>×</button>
+            <h2>Get the Mobile App</h2>
+            <p>Invest, save, and track your growth on the go.</p>
+            <div className="store-flex">
+              <a href="https://apple.com" target="_blank" className="store-btn">App Store</a>
+              <a href="https://play.google.com" target="_blank" className="store-btn">Play Store</a>
+            </div>
+          </div>
+        </div>
+      )}
 
       <div className='fourthsection'>
         <div className='card1'>
@@ -161,8 +201,8 @@ const Whytecc = () => {
         {/* ... (Rest of your sections: eleventh, eight, etc.) ... */}
       </div>
 
+      {/* MODIFIED ELEVENTH SECTION */}
       <section className='eleventhsection'>
-        {/* Avatar Stack Container */}
         <div className='billi-container'>
           <div className='billi-stack'>
             <img src={billi1} alt="Member 1" className='billi-img billi1' />
@@ -172,7 +212,6 @@ const Whytecc = () => {
           <span className='billi-badge'>Join 5,000+ others</span>
         </div>
 
-        {/* Content Container */}
         <div className='eleheading'>
           <h2 className='billih1'>What could be better than having just one billionaire?</h2>
           <h1 className='billih12'>A Circle.</h1>
@@ -182,11 +221,36 @@ const Whytecc = () => {
           </p>
         </div>
 
-        {/* Action Button */}
         <div className='join-wrapper'>
-          <a className='joincircle' href="#">Join a Circle now</a>
+          {/* CHANGED: <a> to <button> to trigger the modal */}
+          <button className='joincircle' onClick={() => setShowJoinModal(true)}>
+            Join a Circle now
+          </button>
         </div>
       </section>
+
+      {/* --- NEW JOIN CIRCLE MODAL --- */}
+      {showJoinModal && (
+        <div className="modal-overlay" onClick={() => setShowJoinModal(false)}>
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+            <button className="close-x" onClick={() => setShowJoinModal(false)}>×</button>
+            <h2>Start Your Circle</h2>
+            <p>You need an account to join or create a savings circle.</p>
+            {/* Added your Login Link here */}
+            <Link className='Login' to="/login" style={{
+              display: 'inline-block',
+              marginTop: '20px',
+              padding: '12px 25px',
+              backgroundColor: '#000',
+              color: '#fff',
+              textDecoration: 'none',
+              borderRadius: '8px'
+            }}>
+              Log in to Continue
+            </Link>
+          </div>
+        </div>
+      )}
 
 
       {/* --- MODIFIED EIGHTSECTION START --- */}
@@ -365,15 +429,36 @@ const Whytecc = () => {
           </div>
         </div>
 
+        {/* --- ADDED DOWNLOAD SECTION HERE --- */}
+        <div className="FooterDownloadArea">
+          <a href="https://play.google.com/store" target="_blank" rel="noreferrer" className="footer-store-btn">
+            Download from Playstore
+          </a>
+          <a href="https://www.apple.com/app-store/" target="_blank" rel="noreferrer" className="footer-store-btn">
+            Download from App Store
+          </a>
+        </div>
+
         <div className='FooterBottom'>
           <p>&copy; 2026 Tecc Savings Technology. All rights reserved.</p>
           <div className='SocialLinks'>
-            <a href="#" className='SocialIcon1'><Facebook size={10} /></a>
-            <a href="#" className='SocialIcon2'><Instagram size={10} /></a>
-            <a href="#" className='SocialIcon3'><Twitter size={10} /></a>
-            <a href="#" className='SocialIcon4'><WhatsApp size={10} /></a>
-            <a href="#" className='SocialIcon5'><LinkedIn size={10} /></a>
-        </div>
+            {/* Replace the '#' with your actual social media profile URLs */}
+            <a href="https://facebook.com/yourprofile" target="_blank" rel="noreferrer" className='SocialIcon1'>
+              <Facebook size={10} />
+            </a>
+            <a href="https://instagram.com/yourprofile" target="_blank" rel="noreferrer" className='SocialIcon2'>
+              <Instagram size={10} />
+            </a>
+            <a href="https://twitter.com/yourprofile" target="_blank" rel="noreferrer" className='SocialIcon3'>
+              <Twitter size={10} />
+            </a>
+            <a href="https://wa.me/23470023742356" target="_blank" rel="noreferrer" className='SocialIcon4'>
+              <WhatsApp size={10} />
+            </a>
+            <a href="https://linkedin.com/company/yourprofile" target="_blank" rel="noreferrer" className='SocialIcon5'>
+              <LinkedIn size={10} />
+            </a>
+          </div>
         </div>
       </footer>
     </div>

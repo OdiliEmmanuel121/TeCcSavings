@@ -6,6 +6,7 @@ import {
 } from '@mui/icons-material';
 import './Login.css'
 import efx1 from '../../../assets/efx1.png'
+import { Link } from 'react-router-dom';
 
 
 
@@ -63,7 +64,7 @@ const Login = () => {
           )}
           <a className='loginButton' href="#">Log in </a>
           <a className='loginButton2' href="#">Forgot password</a>
-          <a className='loginButton3' href="#">Create account </a>
+          <Link className='loginButton3' to="/getstarted">Create account</Link>
         </div>
       </div>
       <div>
