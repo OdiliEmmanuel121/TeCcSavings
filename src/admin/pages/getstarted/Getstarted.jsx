@@ -69,6 +69,7 @@ const Getstarted = () => {
                   <option value="KE">Kenya</option>
                   <option value="CA">Canada</option>
                   <option value="US">USA</option>
+                  <option value="US">England</option>
                 </select>
                 <button className='Continuebutton' onClick={nextStep}>Continue</button>
               </div>

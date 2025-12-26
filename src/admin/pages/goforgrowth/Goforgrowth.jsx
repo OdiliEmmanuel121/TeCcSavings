@@ -53,7 +53,7 @@ const Goforgrowth = () => {
         </div>
       </div>
       
-     <footer className='FooterSection'>
+       <footer className='FooterSection'>
              <div className='FooterContainer'>
                {/* Brand Section */}
                <div className='FooterBrand'>
@@ -93,15 +93,36 @@ const Goforgrowth = () => {
                </div>
              </div>
      
+             {/* --- ADDED DOWNLOAD SECTION HERE --- */}
+             <div className="FooterDownloadArea">
+               <a href="https://play.google.com/store" target="_blank" rel="noreferrer" className="footer-store-btn">
+                 Download from Playstore
+               </a>
+               <a href="https://www.apple.com/app-store/" target="_blank" rel="noreferrer" className="footer-store-btn">
+                 Download from App Store
+               </a>
+             </div>
+     
              <div className='FooterBottom'>
                <p>&copy; 2026 Tecc Savings Technology. All rights reserved.</p>
                <div className='SocialLinks'>
-                 <a href="#" className='SocialIcon1'><Facebook size={10} /></a>
-                 <a href="#" className='SocialIcon2'><Instagram size={10} /></a>
-                 <a href="#" className='SocialIcon3'><Twitter size={10} /></a>
-                 <a href="#" className='SocialIcon4'><WhatsApp size={10} /></a>
-                 <a href="#" className='SocialIcon5'><LinkedIn size={10} /></a>
-             </div>
+                 {/* Replace the '#' with your actual social media profile URLs */}
+                 <a href="https://facebook.com/yourprofile" target="_blank" rel="noreferrer" className='SocialIcon1'>
+                   <Facebook size={10} />
+                 </a>
+                 <a href="https://instagram.com/yourprofile" target="_blank" rel="noreferrer" className='SocialIcon2'>
+                   <Instagram size={10} />
+                 </a>
+                 <a href="https://twitter.com/yourprofile" target="_blank" rel="noreferrer" className='SocialIcon3'>
+                   <Twitter size={10} />
+                 </a>
+                 <a href="https://wa.me/23470023742356" target="_blank" rel="noreferrer" className='SocialIcon4'>
+                   <WhatsApp size={10} />
+                 </a>
+                 <a href="https://linkedin.com/company/yourprofile" target="_blank" rel="noreferrer" className='SocialIcon5'>
+                   <LinkedIn size={10} />
+                 </a>
+               </div>
              </div>
            </footer>
     </div>

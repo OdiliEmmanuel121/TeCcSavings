@@ -162,8 +162,6 @@ const Whytecc = () => {
       </div>
 
       <div className='whyteccContainer'>
-        {/* ... (Sections 1 through 6 stay the same) ... */}
-
         <div className='sevensection-container'>
           <div className='seven-track'>
             {/* We render the list twice for a seamless infinite loop */}
@@ -197,8 +195,6 @@ const Whytecc = () => {
             </div>
           </div>
         )}
-
-        {/* ... (Rest of your sections: eleventh, eight, etc.) ... */}
       </div>
 
       {/* MODIFIED ELEVENTH SECTION */}
