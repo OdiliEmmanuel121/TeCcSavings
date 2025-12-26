@@ -146,7 +146,7 @@
 }
 
 /* Mobile Responsiveness */
-@media (max-width: 900px) {
+@media (max-width: 750px) {
     .get-started-container {
         flex-direction: column;
         /* Stacks them on mobile */
@@ -212,7 +212,7 @@
 }
 
 /* Responsive Layout */
-@media (max-width: 850px) {
+@media (max-width: 750px) {
     .get-started-container {
         flex-direction: column;
         padding: 20px;
@@ -266,7 +266,7 @@
 
 
 /* Responsive Layout */
-@media (max-width: 900px) {
+@media (max-width: 750px) {
     .get-started-container {
         flex-direction: column;
         padding: 20px;
