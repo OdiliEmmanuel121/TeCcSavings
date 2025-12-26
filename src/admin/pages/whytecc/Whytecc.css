@@ -1065,7 +1065,7 @@
 }
 
 /* --- Responsive Adjustments --- */
-@media (max-width: 768px) {
+@media (max-width: 480px) {
     .eleventhsection {
         margin: 40px 20px;
         padding: 60px 20px;
@@ -1107,7 +1107,7 @@
 }
 
 /* --- Mobile Fixes --- */
-@media (max-width: 768px) {
+@media (max-width: 480px) {
     .eleventhsection {
         margin: 40px 15px;
         padding: 60px 20px;
@@ -1548,7 +1548,7 @@
 }
 
 /* Responsive Design */
-@media (max-width: 968px) {
+@media (max-width: 480px) {
     .FooterContainer {
         grid-template-columns: 1fr;
         gap: 40px;
@@ -1595,7 +1595,7 @@
 }
 
 /* Section 1 & 2: Hero */
-@media (max-width: 768px) {
+@media (max-width: 480px) {
     .firstSection {
         flex-direction: column;
         text-align: center;
@@ -1636,7 +1636,7 @@
 }
 
 /* Section 4: Investor Cards */
-@media (max-width: 768px) {
+@media (max-width: 480px) {
     .fourthsection {
         margin-left: 0;
         justify-content: center;
@@ -1650,7 +1650,7 @@
 }
 
 /* Section 5: Videos */
-@media (max-width: 768px) {
+@media (max-width: 480px) {
     .videosection {
         flex-direction: column;
         margin-left: 0;
@@ -1666,7 +1666,7 @@
 }
 
 /* Section 6th */
-@media (max-width: 768px) {
+@media (max-width: 480px) {
     .sixthsection {
         margin-left: 25px;
 
@@ -1674,7 +1674,7 @@
 }
 
 /* Section 7: Numbers */
-@media (max-width: 768px) {
+@media (max-width: 480px) {
 
 
     .headingseven2 {
@@ -1711,7 +1711,7 @@
 
 
 /* Section 8: The Calculator (Your EightCard) */
-@media (max-width: 768px) {
+@media (max-width: 480px) {
     .eightcard {
         width: 90%;
         margin-left: auto;
@@ -1737,7 +1737,7 @@
 
 
 /* Section 12: Large iPhone Section */
-@media (max-width: 768px) {
+@media (max-width: 480px) {
     .iphone11 {
         width: 80%;
         height: auto;
@@ -1772,7 +1772,7 @@
 }
 
 /* Spin Section */
-@media (max-width: 768px) {
+@media (max-width: 480px) {
     .spinmain {
         flex-direction: column;
         align-items: center;
@@ -1800,7 +1800,7 @@
 }
 
 /* Tenth Section: Newsletter */
-@media (max-width: 768px) {
+@media (max-width: 480px) {
     .tenthsection {
         flex-direction: column;
         width: 95%;
@@ -1831,7 +1831,7 @@
 }
 
 /* Footer */
-@media (max-width: 768px) {
+@media (max-width: 480px) {
     .footersection {
         height: auto;
         padding-bottom: 50px;
