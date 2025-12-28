@@ -3,13 +3,15 @@ import { Visibility, VisibilityOff, Close, MarkEmailRead } from '@mui/icons-mate
 import { Link } from 'react-router-dom';
 import './Login.css';
 import efx1 from '../../../assets/efx1.png';
+import logoimg from '../../../assets/logo.png'
+
 
 const Login = () => {
   const [password, setPassword] = useState('');
   const [email, setEmail] = useState('');
   const [resetEmail, setResetEmail] = useState('');
   const [showPassword, setShowPassword] = useState(false);
-  
+
   // Modal States
   const [showModal, setShowModal] = useState(false);
   const [isEmailSent, setIsEmailSent] = useState(false);
@@ -24,15 +26,33 @@ const Login = () => {
 
   return (
     <div className='loginContainer'>
+      <div className='logo1'>
+        <img src={logoimg} alt="Tecc Logo" className='logoclasslog' />
+      </div>
       <div className='loginDetails'>
         <h1 className='loginclassh1'>TeCc Savings.</h1>
         <h2 className='loginclassh2'>Welcome to TeCc Savings.</h2>
         <p className='loginclassh3'>Please enter your sign-in details to continue.</p>
 
-        <div className='logincard'>
-          <input type="text" placeholder='Email address' className='loginEmail' value={email} onChange={(e) => setEmail(e.target.value)} />
+        <form className='logincard' onSubmit={(e) => e.preventDefault()}>
+          <input
+            type="email" /* Changed to email for better mobile keyboard support */
+            placeholder='Email address'
+            className='loginEmail'
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
+
           <div className="password-wrapper">
-            <input type={showPassword ? 'text' : 'password'} placeholder='Password' className='loginPassword' value={password} onChange={(e) => setPassword(e.target.value)} />
+            <input
+              type={showPassword ? 'text' : 'password'}
+              placeholder='Password'
+              className='loginPassword'
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
             <button type="button" onClick={() => setShowPassword(!showPassword)} className='visiblepassword'>
               {showPassword ? <VisibilityOff fontSize="small" /> : <Visibility fontSize="small" />}
             </button>
@@ -44,11 +64,15 @@ const Login = () => {
             </p>
           )}
 
-          <button className='loginButton'>Log in</button>
-          {/* TRIGGER MODAL */}
-          <button className='loginButton2' onClick={() => setShowModal(true)}>Forgot password</button>
+          <button type="submit" className='loginButton'>Log in</button>
+
+          {/* Added type="button" to prevent form submission */}
+          <button type="button" className='loginButton2' onClick={() => setShowModal(true)}>
+            Forgot password
+          </button>
+
           <Link className='loginButton3' to="/getstarted">Create account</Link>
-        </div>
+        </form>
       </div>
 
       <div>
@@ -59,18 +83,18 @@ const Login = () => {
       {showModal && (
         <div className='modal-overlay'>
           <div className='forgot-modal-card'>
-            <button className='close-modal' onClick={() => {setShowModal(false); setIsEmailSent(false);}}><Close /></button>
-            
+            <button className='close-modal' onClick={() => { setShowModal(false); setIsEmailSent(false); }}><Close /></button>
+
             {!isEmailSent ? (
               <>
                 <h2>Reset Password</h2>
                 <p>Enter the email associated with your account and we'll send a link to reset your password.</p>
                 <form onSubmit={handleForgotSubmit}>
-                  <input 
-                    type="email" 
-                    required 
-                    placeholder="Enter your email" 
-                    className='loginEmail' 
+                  <input
+                    type="email"
+                    required
+                    placeholder="Enter your email"
+                    className='loginEmail'
                     value={resetEmail}
                     onChange={(e) => setResetEmail(e.target.value)}
                   />

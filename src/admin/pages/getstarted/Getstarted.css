@@ -244,7 +244,7 @@
 @media (max-width: 500px) {
     .get-started-page-wrapper {
         padding: 20px 15px;
-        margin-top: 70px;
+        margin-top: 90px;
         align-items: flex-start; /* Better for long forms on mobile */
     }
 

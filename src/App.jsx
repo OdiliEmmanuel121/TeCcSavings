@@ -40,12 +40,14 @@ const App = () => {
           <Route path="/" element={<Whytecc />} />
           <Route path="/goforgrowth" element={<Goforgrowth />} />
           <Route path="/blog" element={<Blog />} />
+           <Route path="/login" element={<Login />} />
+             <Route path="/getstarted" element={<Getstarted />} />
         </Route>
 
         {/* ROUTES WITHOUT NAVBAR (Login, Register, Business) */}
         <Route element={<AuthLayout />}>
-          <Route path="/login" element={<Login />} />
-          <Route path="/getstarted" element={<Getstarted />} />
+         
+        
           <Route path="/business" element={<Teccbusiness />} />
           <Route path="/why-tecc" element={<Whyteccsavings />} />
           <Route path="/developer" element={<Developer />} />
