@@ -9,6 +9,10 @@ import Teccbusiness from './admin/pages/teccbusiness/Teccbusiness';
 import Whyteccsavings from './admin/pages/whyteccsavings/Whyteccsavings';
 import Developer from './admin/pages/developer/Developer';
 import Privacypolicy from './admin/pages/privacypolicy/Privacypolicy';
+import Disclosure from './admin/pages/disclosure/Disclosure';
+import Faqs from './admin/pages/faq/Faqs';
+import Professions from './admin/pages/professions/Professions';
+import Aboutus from './admin/pages/aboutus/Aboutus';
 
 // 1. Create a Layout for Public Pages (Navbar included)
 const MainLayout = () => (
@@ -46,6 +50,11 @@ const App = () => {
           <Route path="/why-tecc" element={<Whyteccsavings />} />
           <Route path="/developer" element={<Developer />} />
           <Route path="/privacy" element={<Privacypolicy/>} />
+          <Route path="/disclosure" element={<Disclosure/>} />
+          <Route path="/faqs" element={<Faqs/>} />
+          <Route path="/professions" element={<Professions/>} />
+          <Route path="/about" element={<Aboutus/>} />
+
         </Route>
 
         {/* DASHBOARD ROUTES (Example of a 3rd layout) */}

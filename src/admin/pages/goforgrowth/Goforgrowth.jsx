@@ -1,6 +1,7 @@
 import './Goforgrowth.css'
 import { VerifiedUser, TrendingUp, AccountBalance, LinkedIn } from '@mui/icons-material'
 import { ArrowCircleLeft, ArrowCircleRight, Facebook, Instagram, Twitter, WhatsApp } from '@mui/icons-material'
+import { Link } from 'react-router-dom';
 
 
 const Goforgrowth = () => {
@@ -54,77 +55,76 @@ const Goforgrowth = () => {
       </div>
       
        <footer className='FooterSection'>
-             <div className='FooterContainer'>
-               {/* Brand Section */}
-               <div className='FooterBrand'>
-                 <h2 className='FooterLogo'>Tecc Savings</h2>
-                 <p className='FooterTagline'>Global naira investment <br /> made easy.</p>
-               </div>
-     
-               {/* Links Grid */}
-               <div className='FooterLinksGrid'>
-                 <div className='FooterColumn'>
-                   <h3>Company</h3>
-                   <a href="#">About us</a>
-                   <a href="#">Professions</a>
-                   <a href="#">FAQs</a>
-                   <a href="#">Weekly newsletter</a>
-                 </div>
-     
-                 <div className='FooterColumn'>
-                   <h3>Resources</h3>
-                   <a href="#">Why Tecc</a>
-                   <a href="#">Tecc business</a>
-                   <a href="#">Developer</a>
-                 </div>
-     
-                 <div className='FooterColumn'>
-                   <h3>Official</h3>
-                   <a href="#">Privacy Policy</a>
-                   <a href="#">Disclosure</a>
-                   <a href="#">Go for growth</a>
-                 </div>
-     
-                 <div className='FooterColumn'>
-                   <h3>Contact us</h3>
-                   <a href="tel:070023742356">0700 2374 2356</a>
-                   <a href="mailto:Hello@teccgrowth.com">Hello@teccgrowth.com</a>
-                 </div>
-               </div>
-             </div>
-     
-             {/* --- ADDED DOWNLOAD SECTION HERE --- */}
-             <div className="FooterDownloadArea">
-               <a href="https://play.google.com/store" target="_blank" rel="noreferrer" className="footer-store-btn">
-                 Download from Playstore
-               </a>
-               <a href="https://www.apple.com/app-store/" target="_blank" rel="noreferrer" className="footer-store-btn">
-                 Download from App Store
-               </a>
-             </div>
-     
-             <div className='FooterBottom'>
-               <p>&copy; 2026 Tecc Savings Technology. All rights reserved.</p>
-               <div className='SocialLinks'>
-                 {/* Replace the '#' with your actual social media profile URLs */}
-                 <a href="https://facebook.com/yourprofile" target="_blank" rel="noreferrer" className='SocialIcon1'>
-                   <Facebook size={10} />
-                 </a>
-                 <a href="https://instagram.com/yourprofile" target="_blank" rel="noreferrer" className='SocialIcon2'>
-                   <Instagram size={10} />
-                 </a>
-                 <a href="https://twitter.com/yourprofile" target="_blank" rel="noreferrer" className='SocialIcon3'>
-                   <Twitter size={10} />
-                 </a>
-                 <a href="https://wa.me/23470023742356" target="_blank" rel="noreferrer" className='SocialIcon4'>
-                   <WhatsApp size={10} />
-                 </a>
-                 <a href="https://linkedin.com/company/yourprofile" target="_blank" rel="noreferrer" className='SocialIcon5'>
-                   <LinkedIn size={10} />
-                 </a>
-               </div>
-             </div>
-           </footer>
+        <div className='FooterContainer'>
+          {/* Brand Section */}
+          <div className='FooterBrand'>
+            <h2 className='FooterLogo'>Tecc Savings</h2>
+            <p className='FooterTagline'>Global naira investment <br /> made easy.</p>
+          </div>
+
+          {/* Links Grid */}
+          <div className='FooterLinksGrid'>
+            <div className='FooterColumn'>
+              <h3>Company</h3>
+              <Link to="/about">About us</Link>
+              <Link to="/professions">Professions</Link>
+              <Link to="/faqs">FAQs</Link>
+            </div>
+
+            <div className='FooterColumn'>
+              <h3>Resources</h3>
+              <Link to="/why-tecc">Why Tecc Savings</Link>
+              <Link to="/business">Tecc Business</Link> {/* This links to the new page */}
+              <Link to="/developer">Developer</Link>
+            </div>
+
+            <div className='FooterColumn'>
+              <h3>Official</h3>
+              <Link to="/privacy">Privacy Policy</Link>
+              <Link to="/disclosure">Disclosure</Link>
+        
+            </div>
+
+            <div className='FooterColumn'>
+              <h3>Contact us</h3>
+              <a href="tel:070023742356">0700 2374 2356</a>
+              <a href="mailto:Hello@teccgrowth.com">Hello@teccgrowth.com</a>
+            </div>
+          </div>
+        </div>
+
+        {/* --- ADDED DOWNLOAD SECTION HERE --- */}
+        <div className="FooterDownloadArea">
+          <a href="https://play.google.com/store" target="_blank" rel="noreferrer" className="footer-store-btn">
+            Download from Playstore
+          </a>
+          <a href="https://www.apple.com/app-store/" target="_blank" rel="noreferrer" className="footer-store-btn">
+            Download from App Store
+          </a>
+        </div>
+
+        <div className='FooterBottom'>
+          <p>&copy; 2026 Tecc Savings Technology. All rights reserved.</p>
+          <div className='SocialLinks'>
+            {/* Replace the '#' with your actual social media profile URLs */}
+            <a href="https://facebook.com/yourprofile" target="_blank" rel="noreferrer" className='SocialIcon1'>
+              <Facebook size={10} />
+            </a>
+            <a href="https://instagram.com/yourprofile" target="_blank" rel="noreferrer" className='SocialIcon2'>
+              <Instagram size={10} />
+            </a>
+            <a href="https://twitter.com/yourprofile" target="_blank" rel="noreferrer" className='SocialIcon3'>
+              <Twitter size={10} />
+            </a>
+            <a href="https://wa.me/23470023742356" target="_blank" rel="noreferrer" className='SocialIcon4'>
+              <WhatsApp size={10} />
+            </a>
+            <a href="https://linkedin.com/company/yourprofile" target="_blank" rel="noreferrer" className='SocialIcon5'>
+              <LinkedIn size={10} />
+            </a>
+          </div>
+        </div>
+      </footer>
     </div>
   )
 }

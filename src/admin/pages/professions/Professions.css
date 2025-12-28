@@ -1,0 +1,178 @@
+.professions-wrapper {
+    background-color: #f8fafc;
+    min-height: 100vh;
+    font-family: 'Inter', sans-serif;
+    color: #0f172a;
+}
+
+/* Back Button */
+.back-navigation-btn {
+    position: fixed;
+    top: 30px;
+    left: 30px;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: white;
+    border: 1px solid #e2e8f0;
+    padding: 10px 20px;
+    border-radius: 100px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: 0.3s;
+}
+
+.back-navigation-btn:hover {
+    background: #00d094;
+    color: white;
+    border-color: #00d094;
+}
+
+/* Hero Section */
+.professions-hero {
+    background: #061a11;
+    /* Deep Brand Green */
+    padding: 120px 5% 100px;
+    text-align: center;
+    color: white;
+}
+
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(0, 208, 148, 0.1);
+    color: #00d094;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.professions-hero h1 {
+    font-size: 56px;
+    line-height: 1.1;
+    margin-bottom: 25px;
+}
+
+.professions-hero h1 span {
+    color: #00d094;
+}
+
+.professions-hero p {
+    max-width: 600px;
+    margin: 0 auto;
+    font-size: 18px;
+    color: #94a3b8;
+}
+
+/* Container */
+.professions-container {
+    max-width: 1000px;
+    margin: -50px auto 100px;
+    background: white;
+    border-radius: 32px;
+    padding: 60px;
+    box-shadow: 0 40px 100px rgba(0, 0, 0, 0.05);
+}
+
+.culture-section {
+    margin-bottom: 60px;
+    border-bottom: 1px solid #f1f5f9;
+    padding-bottom: 40px;
+}
+
+.culture-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-top: 30px;
+}
+
+.role-card {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 25px;
+    border-radius: 20px;
+    border: 1px solid #f1f5f9;
+    margin-bottom: 16px;
+    transition: 0.3s;
+}
+
+.role-card:hover {
+    border-color: #00d094;
+    background: #f0fdf4;
+    transform: translateY(-5px);
+}
+
+.role-icon {
+    background: #061a11;
+    color: #00d094;
+    padding: 15px;
+    border-radius: 12px;
+}
+
+.apply-btn {
+    margin-left: auto;
+    background: #061a11;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+/* Footer Links */
+.professions-footer {
+    text-align: center;
+    padding-bottom: 60px;
+}
+
+.footer-links a {
+    color: #00d094;
+    text-decoration: none;
+    font-weight: 600;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+/* --- MOBILE VIEW (500px) --- */
+@media (max-width: 500px) {
+    .professions-hero h1 {
+        font-size: 32px;
+    }
+
+    .professions-container {
+        padding: 30px 20px;
+        margin-top: -40px;
+        border-radius: 20px;
+        width: 90%;
+    }
+
+    .culture-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .role-card {
+        flex-direction: column;
+        text-align: center;
+        margin-top: 40px;
+    }
+
+    .apply-btn {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .back-navigation-btn {
+        top: 20px;
+        left: 20px;
+        padding: 8px 14px;
+    }
+}

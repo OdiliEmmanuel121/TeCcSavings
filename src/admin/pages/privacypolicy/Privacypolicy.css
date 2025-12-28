@@ -5,12 +5,36 @@
     color: #1e293b;
 }
 
+.privacy-header {
+    margin-top: 40px;
+}
+
+.Privacy-back-button {
+    background: none;
+    border: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #55eebb;
+    font-weight: 700;
+    cursor: pointer;
+    padding: 10px 0;
+    transition: 0.3s;
+    margin-left: 30px;
+}
+
+.Privacy-back-button:hover {
+    color: #7ca17f;
+}
+
 .privacy-hero {
     background: linear-gradient(135deg, #061a11 0%, #142922 100%);
-    padding: 70px 5%;
+    padding: 50px 30%;
     text-align: center;
     color: white;
+    margin-top:-90px;
 }
+
 
 .privacy-hero h1 {
     font-size: 48px;
@@ -97,6 +121,10 @@
 
 }
 
+.usagelist{
+    line-height: 30px;
+   
+}
 .back-navigation {
     position: absolute;
     top: 30px;
@@ -124,13 +152,14 @@
 }
 
 /* Mobile Adjustment for iPhone 15 */
-@media (max-width: 430px) {
+@media (max-width: 500px) {
     .back-navigation {
         top: 20px;
         left: 20px;
         padding: 8px 15px;
         font-size: 14px;
     }
+
 
     .privacy-hero {
         padding-top: 80px;
@@ -167,4 +196,9 @@
     .privacy-content h2 {
         font-size: 22px;
     }
+
+    .usagelist{
+    line-height: 30px;
+    margin-left: 30px;
+}
 }

@@ -1,4 +1,5 @@
 import React, { useState } from 'react'; // Ensure useState is imported
+import { CheckCircle, X } from 'lucide-react';
 import './Whytecc.css'
 import iphone from '../../../assets/iphone.png'
 import { ArrowCircleLeft, ArrowCircleRight, Facebook, Instagram, LinkedIn, Twitter, WhatsApp } from '@mui/icons-material'
@@ -35,6 +36,13 @@ const Whytecc = () => {
   const [years, setYears] = useState(45);
   const [showInvestModal, setShowInvestModal] = useState(false);
   const [showDownloadModal, setShowDownloadModal] = useState(false);
+  const [showPopup, setShowPopup] = useState(false);
+
+
+  const handleSubscribe = (e) => {
+    e.preventDefault();
+    setShowPopup(true);
+  };
 
 
   // NEW STATE for Join Circle Popup
@@ -375,15 +383,41 @@ const Whytecc = () => {
           <h1 className='news'>Weekly newsletter</h1>
           <h2 className='fun' >Sign up for our weekly newsletter for fun, finance and more</h2>
         </div>
-        <div>
-          <input type="text" className='firstname' placeholder='Firstname' />
-          <input type="text" className='lastname' placeholder='Lastname' />
-        </div>
-        <div>
-          <input type="text" className='email' placeholder='Email address' />
-          <button className='subscribebutton'>Subscribe</button>
-        </div>
+        <form onSubmit={handleSubscribe}>
+          <div className='forminput'>
+            <input type="text" className='firstname' placeholder='Firstname' />
+            <input type="text" className='lastname' placeholder='Lastname' />
+          </div>
+          <div>
+            <input type="text" className='email' placeholder='Email address' />
+            <button className='subscribebutton'>Subscribe</button>
+          </div>
+        </form>
       </div>
+      {/* --- SUCCESS POPUP --- */}
+      {showPopup && (
+        <div className="popup-overlay" onClick={() => setShowPopup(false)}>
+          <div className="popup-card" onClick={(e) => e.stopPropagation()}>
+            <button className="close-popup" onClick={() => setShowPopup(false)}>
+              <X size={20} />
+            </button>
+
+            <div className="success-icon-wrapper">
+              <CheckCircle size={60} color="#00d094" />
+            </div>
+
+            <h2 className="popup-title">You're on the list!</h2>
+            <p className="popup-text">
+              Success! You've officially subscribed to the <strong>Tecc Weekly</strong>.
+              Check your inbox every Monday for fun, finance, and wealth-building tips.
+            </p>
+
+            <button className="popup-confirm-btn" onClick={() => setShowPopup(false)}>
+              Great, thanks!
+            </button>
+          </div>
+        </div>
+      )}
 
       <footer className='FooterSection'>
         <div className='FooterContainer'>
@@ -400,7 +434,6 @@ const Whytecc = () => {
               <Link to="/about">About us</Link>
               <Link to="/professions">Professions</Link>
               <Link to="/faqs">FAQs</Link>
-              <Link to="/newsletter">Weekly newsletter</Link>
             </div>
 
             <div className='FooterColumn'>
@@ -414,7 +447,7 @@ const Whytecc = () => {
               <h3>Official</h3>
               <Link to="/privacy">Privacy Policy</Link>
               <Link to="/disclosure">Disclosure</Link>
-              <Link to="/goforgrowth">Go for growth</Link>
+        
             </div>
 
             <div className='FooterColumn'>

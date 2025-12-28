@@ -1,15 +1,16 @@
 import { useNavigate } from 'react-router-dom';
 import './Privacypolicy.css';
-import { ArrowLeft } from 'lucide-react';
+import {ArrowBack,Security,TrendingUp,AccountBalance,PhonelinkRing} from '@mui/icons-material';
 
 const Privacypolicy = () => {
+    const navigate = useNavigate();
     return (
         <div className='privacy-wrapper'>
-            <button className="back-navigation" onClick={() => navigate(-1)}>
-                <ArrowLeft size={20} strokeWidth={2.5} />
-                <span>Go Back</span>
-            </button>
-
+            <header className="privacy-header">
+                <button className="Privacy-back-button" onClick={() => navigate(-1)}>
+                    <ArrowBack /> <span>Back</span>
+                </button>
+            </header>
 
             <header className='privacy-hero'>
                 <h1>Privacy Policy</h1>
@@ -50,7 +51,7 @@ const Privacypolicy = () => {
 
                     <section id="usage">
                         <h2>3. How We Use Your Data</h2>
-                        <ul>
+                        <ul className='usagelist' >
                             <li>To facilitate global Naira investments and savings cycles.</li>
                             <li>To prevent fraudulent activities and satisfy AML (Anti-Money Laundering) regulations.</li>
                             <li>To provide personalized financial growth insights.</li>

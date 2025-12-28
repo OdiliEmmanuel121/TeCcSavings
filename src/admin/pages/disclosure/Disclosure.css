@@ -1,0 +1,145 @@
+.disclosure-wrapper {
+  background-color: #fcfdfd;
+  min-height: 100vh;
+  font-family: 'Inter', sans-serif;
+  color: #1a2e25;
+}
+
+/* Grand Hero Header */
+.disclosure-hero {
+  background: linear-gradient(135deg, #061a11 0%, #0c2b1d 100%);
+  color: #ffffff;
+  padding: 100px 5% 120px;
+  text-align: center;
+}
+
+.hero-icon {
+  color: #00d094;
+  margin-bottom: 20px;
+}
+
+.disclosure-hero h1 {
+  font-size: 48px;
+  font-weight: 800;
+  margin-bottom: 15px;
+  letter-spacing: -1px;
+}
+
+.disclosure-hero p {
+  font-size: 18px;
+  color: #a9b9b2;
+}
+
+/* Back Navigation */
+.back-nav {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 100px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+  backdrop-filter: blur(10px);
+}
+
+.back-nav:hover {
+  background: #00d094;
+  color: #061a11;
+}
+
+/* Content Body */
+.disclosure-body {
+  max-width: 800px;
+  margin: -60px auto 60px;
+  background: white;
+  padding: 60px;
+  border-radius: 30px;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.05);
+}
+
+.main-warning {
+  background: #f0fdf4;
+  border: 1px solid #dcfce7;
+  padding: 25px;
+  border-radius: 16px;
+  display: flex;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.main-warning h3 {
+  margin-bottom: 5px;
+  color: #061a11;
+}
+
+.disclosure-section {
+  margin-bottom: 35px;
+}
+
+.disclosure-section h2 {
+  font-size: 22px;
+  margin-bottom: 12px;
+  color: #061a11;
+}
+
+.disclosure-section p {
+  line-height: 1.7;
+  color: #5c6d67;
+}
+
+/* Grid for Mobile/Desktop */
+.disclosure-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  padding-top: 30px;
+  border-top: 1px solid #eee;
+}
+
+.grid-item h4 {
+  margin: 10px 0 5px;
+  color: #061a11;
+}
+
+.grid-item p {
+  font-size: 14px;
+  color: #64748b;
+}
+
+/* --- MOBILE VIEW (500px) --- */
+@media (max-width: 500px) {
+  .disclosure-hero {
+    padding: 80px 20px 100px;
+  }
+
+  .disclosure-hero h1 {
+    font-size: 32px;
+  }
+
+  .back-nav {
+    top: 20px;
+    left: 20px;
+    padding: 8px 14px;
+    font-size: 14px;
+  }
+
+  .disclosure-body {
+    margin: -40px 15px 40px;
+    padding: 30px 20px;
+  }
+
+  .main-warning {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .disclosure-grid {
+    grid-template-columns: 1fr;
+  }
+}

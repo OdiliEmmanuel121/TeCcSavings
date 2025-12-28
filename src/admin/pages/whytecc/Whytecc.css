@@ -979,6 +979,8 @@
     text-align: center;
 }
 
+
+
 /* Typography */
 .news {
     font-family: 'Inter', sans-serif;
@@ -1051,6 +1053,107 @@
 .subscribebutton:hover {
     background-color: #ffffff;
     transform: translateY(-2px);
+}
+
+/* --- NEWSLETTER POPUP STYLES --- */
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(6, 26, 17, 0.85);
+    /* Dark Brand Green Overlay */
+    backdrop-filter: blur(12px);
+    /* Premium Blur */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    padding: 20px;
+}
+
+.popup-card {
+    background: #ffffff;
+    max-width: 450px;
+    width: 100%;
+    padding: 50px 40px;
+    border-radius: 32px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+    animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes popIn {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.close-popup {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: #f1f5f9;
+    border: none;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+}
+
+.close-popup:hover {
+    background: #e2e8f0;
+}
+
+.success-icon-wrapper {
+    margin-bottom: 25px;
+    display: flex;
+    justify-content: center;
+}
+
+.popup-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 28px;
+    font-weight: 800;
+    color: #061a11;
+    margin-bottom: 12px;
+}
+
+.popup-text {
+    font-size: 16px;
+    color: #64748b;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.popup-confirm-btn {
+    background-color: #00d094;
+    color: #061a11;
+    width: 100%;
+    padding: 16px;
+    border: none;
+    border-radius: 14px;
+    font-weight: 700;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.popup-confirm-btn:hover {
+    background-color: #061a11;
+    color: #ffffff;
 }
 
 
@@ -1199,10 +1302,11 @@
 /* --- iPhone 15 Mobile Specifics --- */
 
 @media (max-width: 500px) {
-    
+
     /* --- First Section Mobile --- */
     .firstSection {
-        flex-direction: column; /* Stack text on top of images */
+        flex-direction: column;
+        /* Stack text on top of images */
         text-align: center;
         padding: 60px 20px;
         min-height: auto;
@@ -1210,7 +1314,8 @@
     }
 
     .firstSectionh1 {
-        font-size: 36px; /* Optimized size for mobile headers */
+        font-size: 36px;
+        /* Optimized size for mobile headers */
         line-height: 1.2;
         margin-bottom: 20px;
     }
@@ -1218,30 +1323,39 @@
     /* Adjusting images to sit side-by-side or overlap centered */
     .iphoneimg,
     .iphoneimg1 {
-        width: 60%; /* Larger on mobile to be legible */
+        width: 60%;
+        /* Larger on mobile to be legible */
         max-width: 250px;
-        margin-right: -0; /* Reset desktop margins */
+        margin-right: -0;
+        /* Reset desktop margins */
     }
+
     .iphoneimg1 {
-        margin-top: -100px; /* Pull the second image up to overlap slightly */
-        margin-left: 10px;  /* Slight horizontal offset for style */
-        opacity: 0.8;       /* Fade the background image slightly for depth */
+        margin-top: -100px;
+        /* Pull the second image up to overlap slightly */
+        margin-left: 10px;
+        /* Slight horizontal offset for style */
+        opacity: 0.8;
+        /* Fade the background image slightly for depth */
     }
 
     /* --- Second Section Mobile --- */
     .secondSection {
         flex-direction: column;
-        margin-left: 0; /* Reset desktop margin */
+        margin-left: 0;
+        /* Reset desktop margin */
         padding: 0 20px;
         margin-top: 20px;
         text-align: center;
     }
 
     .secondSectionp {
-        margin-top: 0; /* REMOVE the -300px margin that breaks mobile */
+        margin-top: 0;
+        /* REMOVE the -300px margin that breaks mobile */
         font-size: 16px;
         line-height: 1.5;
-        color: #4b5563; /* Slightly softer color for better mobile reading */
+        color: #4b5563;
+        /* Slightly softer color for better mobile reading */
     }
 }
 
@@ -1589,6 +1703,7 @@
         flex-direction: column !important;
         width: 100% !important;
         gap: 12px !important;
+        margin-top: 10px;
     }
 
     .firstname,
@@ -1598,12 +1713,35 @@
         width: 100% !important;
         /* Forces full width on mobile */
         box-sizing: border-box;
+        margin-top: 20px;
     }
 
     .subscribebutton {
         padding: 16px;
         /* Larger tap target for mobile */
-        margin-top: 8px;
+        margin-top: 18px;
+    }
+}
+
+/* --- iPhone 15 Mobile Optimization --- */
+@media (max-width: 500px) {
+    .popup-card {
+        padding: 40px 24px;
+        border-radius: 24px;
+        margin: 0 10px;
+    }
+
+    .popup-title {
+        font-size: 24px;
+    }
+
+    .popup-text {
+        font-size: 15px;
+    }
+
+    .success-icon-wrapper svg {
+        width: 50px;
+        height: 50px;
     }
 }
 
