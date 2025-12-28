@@ -165,6 +165,7 @@
     border: 1px solid #c7cfd6;
     overflow: hidden;
     /* Keeps corners rounded */
+    width: 100%;
 }
 
 .comparison-table {
