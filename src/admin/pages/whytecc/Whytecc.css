@@ -1220,12 +1220,11 @@
     .iphoneimg1 {
         width: 60%; /* Larger on mobile to be legible */
         max-width: 250px;
-        margin-right: 0; /* Reset desktop margins */
+        margin-right: -0; /* Reset desktop margins */
     }
-
     .iphoneimg1 {
-        margin-top: -200px; /* Pull the second image up to overlap slightly */
-        margin-left: 40px;  /* Slight horizontal offset for style */
+        margin-top: -100px; /* Pull the second image up to overlap slightly */
+        margin-left: 10px;  /* Slight horizontal offset for style */
         opacity: 0.8;       /* Fade the background image slightly for depth */
     }
 

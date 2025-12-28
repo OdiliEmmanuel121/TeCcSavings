@@ -1,0 +1,57 @@
+.business-page {
+    padding: 80px 5%;
+    font-family: 'Inter', sans-serif;
+    color: #142922;
+    margin-top: -50px;
+}
+
+.business-hero {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.business-hero h1 {
+    font-size: 48px;
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+
+.business-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 80px;
+}
+
+.b-card {
+    background: #fcfdfc;
+    padding: 40px;
+    border-radius: 20px;
+    border: 1px solid #eef2f6;
+    transition: 0.3s;
+}
+
+.b-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+}
+
+.b-icon {
+    color: #278f2e;
+    font-size: 40px !important;
+    margin-bottom: 20px;
+}
+
+.about-text {
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.8;
+    background: #ecfdf5;
+    padding: 40px;
+    border-radius: 24px;
+}
+
+.about-text h2 {
+    margin-bottom: 20px;
+    color: #278f2e;
+}

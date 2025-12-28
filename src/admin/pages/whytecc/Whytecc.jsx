@@ -397,24 +397,24 @@ const Whytecc = () => {
           <div className='FooterLinksGrid'>
             <div className='FooterColumn'>
               <h3>Company</h3>
-              <a href="#">About us</a>
-              <a href="#">Professions</a>
-              <a href="#">FAQs</a>
-              <a href="#">Weekly newsletter</a>
+              <Link to="/about">About us</Link>
+              <Link to="/professions">Professions</Link>
+              <Link to="/faqs">FAQs</Link>
+              <Link to="/newsletter">Weekly newsletter</Link>
             </div>
 
             <div className='FooterColumn'>
               <h3>Resources</h3>
-              <a href="#">Why Tecc</a>
-              <a href="#">Tecc business</a>
-              <a href="#">Developer</a>
+              <Link to="/why-tecc">Why Tecc Savings</Link>
+              <Link to="/business">Tecc Business</Link> {/* This links to the new page */}
+              <Link to="/developer">Developer</Link>
             </div>
 
             <div className='FooterColumn'>
               <h3>Official</h3>
-              <a href="#">Privacy Policy</a>
-              <a href="#">Disclosure</a>
-              <a href="#">Go for growth</a>
+              <Link to="/privacy">Privacy Policy</Link>
+              <Link to="/disclosure">Disclosure</Link>
+              <Link to="/goforgrowth">Go for growth</Link>
             </div>
 
             <div className='FooterColumn'>
