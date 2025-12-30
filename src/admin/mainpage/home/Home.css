@@ -1,16 +1,40 @@
 .internal-home {
     padding: 20px;
-    max-width: 1200px;
+    max-width: 82%;
     margin: 0 auto;
+    margin-left: 18%;
+}
+
+.home-acc {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
 }
 
 .home-header {
-    margin-bottom: 30px;
+    font-weight: 1000;
+    font-size: 18px;
+    font-style: italic;
+    color: #278f2e;
 }
 
 .home-header h1 {
     font-size: 24px;
     color: #142922;
+}
+
+.home-Acc {
+    font-weight: 500;
+    font-size: 15px;
+    font-family: sans-serif;
+    color: #09350c;
+    margin-right: -520px;
+}
+
+.acc-iconC {
+    color: #278f2e;
+    margin-top: 13px;
+    margin-right: 20px;
 }
 
 /* Stats Cards */
@@ -19,13 +43,15 @@
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 20px;
     margin-bottom: 40px;
+    margin-top: -10px;
 }
 
 .stat-card {
-    background: #ffffff;
+    background: #fcfcfc;
     padding: 25px;
     border-radius: 16px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 12px rgba(1, 1, 1, 0.20);
+    /* padding-bottom: 250px; */
 }
 
 .stat-card h3 {
@@ -39,17 +65,100 @@
     font-weight: 800;
 }
 
+.Balance {
+    font-style: italic;
+    color: #09350c;
+}
+
+.AddDiv {
+    display: flex;
+    justify-content: center;
+    margin-top: 150px;
+    gap: 140px;
+}
+
+.AddDiv1 {
+    display: flex;
+    justify-content: center;
+    margin-top: 165px;
+    gap: 140px;
+}
+
+.cardAdd,
+.cardSend {
+    border-radius: 30px;
+    border: 2px solid #f1f5f9;
+    padding: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    background-color: #e9f1e9;
+    display: flex;
+    gap: 2px;
+    border-color: #278f2e;
+}
+
+.cardSend1 {
+    border-radius: 30px;
+    border: 2px solid #f1f5f9;
+    padding: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    background-color: #e9f1e9;
+    display: flex;
+    gap: 2px;
+    border-color: #278f2e;
+    margin-left: -300px;
+
+}
+
+.addicon,
+.arrowicon {
+    color: #086143;
+    margin-top: 3px;
+
+}
+
+.arrowicon1 {
+    color: #086143;
+    margin-top: 3px;
+
+}
+
+.cardAdd h5,
+.cardSend h5 {
+    line-height: 30px;
+    font-family: sans-serif;
+    font-weight: 700;
+}
+
+.cardSend1 h5 {
+    line-height: 30px;
+    font-family: sans-serif;
+    font-weight: 700;
+}
+
+.Internal-H3 {
+    margin-top: -25px;
+    margin-bottom: 10px;
+    font-style: italic;
+    font-size: 24px;
+    color: #142922;
+}
+
 /* The Navigation Grid */
 .internal-nav-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2x2 on mobile, 4x1 on desktop */
+    grid-template-columns: repeat(2, 1fr);
+    /* 2x2 on mobile, 4x1 on desktop */
     gap: 20px;
+
 }
 
 .nav-box {
     background: #f8fafc;
     border: 1px solid #e2e8f0;
     padding: 30px 20px;
+
     border-radius: 20px;
     text-decoration: none;
     display: flex;
@@ -57,6 +166,7 @@
     align-items: center;
     gap: 12px;
     transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(1, 1, 1, 0.20);
 }
 
 .nav-box:hover {
@@ -66,8 +176,9 @@
 }
 
 .nav-box .icon {
-    font-size: 32px;
+    font-size: 42px;
     color: #278f2e;
+
 }
 
 .nav-box span {
@@ -75,9 +186,212 @@
     color: #1e293b;
 }
 
+.Investdiv {
+    margin-left: -100px;
+    margin-top: 50px;
+}
+
+.Investdiv h3 {
+    font-family: sans-serif;
+    color: #1e293b;
+    font-size: medium;
+}
+
+.Investdiv h5 {
+    font-family: sans-serif;
+    color: #3b8044;
+    font-size: x-small;
+    font-style: italic;
+}
+
+.Investdiv p {
+    font-family: sans-serif;
+    color: #000000;
+    font-size: medium;
+    font-weight: 600;
+
+}
+
+.investarrow {
+    color: #278f2e;
+    margin-right: -150px;
+    margin-top: -50px;
+}
+
+.chart-section {
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.chart-card {
+    background: #ffffff;
+    border-radius: 24px;
+    padding: 24px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    border: 1px solid #f1f5f9;
+}
+
+.chart-header {
+    margin-bottom: 25px;
+}
+
+.chart-header h3 {
+    font-size: 18px;
+    color: #061a11;
+    font-weight: 700;
+    margin: 0;
+}
+
+.chart-header p {
+    font-size: 13px;
+    color: #94a3b8;
+    margin: 4px 0 0 0;
+}
+
+.chart-container {
+    width: 100%;
+}
+
 /* Desktop Adjustment */
 @media (min-width: 768px) {
     .internal-nav-grid {
         grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+
+
+/* --- MOBILE VIEW (500px) --- */
+/* --- MOBILE VIEW (MAX 500px) --- */
+@media (max-width: 500px) {
+    .internal-home {
+        padding: 12px;
+        /* Slightly less padding to save space */
+        max-width: 100%;
+        margin-left: 0;
+    }
+
+    /* Header adjustments */
+    .home-acc {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .home-Acc {
+        margin-right: 0;
+        order: 2;
+    }
+
+    .acc-icon {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+
+    /* --- 2 COLUMN STATS CARDS --- */
+    .stats-grid {
+        grid-template-columns: 1fr 1fr;
+        /* Force 2 columns */
+        gap: 10px;
+        margin-top: 10px;
+    }
+
+    .stat-card {
+        padding: 15px 10px;
+        /* Thinner padding for 2-column fit */
+    }
+
+    .stat-card h3 {
+        font-size: 11px;
+    }
+
+    /* Smaller text to prevent wrapping */
+    .stat-card p {
+        font-size: 14px;
+        font-weight: 700;
+    }
+
+    /* Fix Add/Send Buttons inside 2-column cards */
+    .AddDiv,
+    .AddDiv1 {
+        margin-top: 15px;
+        gap: 5px;
+        flex-direction: column;
+        /* Stack buttons inside cards because they are narrow */
+    }
+
+    .cardAdd,
+    .cardSend,
+    .cardSend1 {
+        padding: 1px;
+        margin-left: 0;
+        width: 100%;
+        justify-content: center;
+        width: 100px;
+    }
+
+    .cardAdd h5,
+    .cardSend h5,
+    .cardSend1 h5 {
+        font-size: 10px;
+    }
+
+    /* --- 2 COLUMN INVESTMENT BOXES --- */
+    .internal-nav-grid {
+        grid-template-columns: 1fr 1fr;
+        /* Force 2 columns */
+        gap: 10px;
+    }
+
+    .nav-box {
+        padding: 15px 10px;
+        flex-direction: column;
+        /* Back to column for 2-column layout */
+        align-items: center;
+        text-align: center;
+    }
+
+    .Investdiv {
+        margin-left: 0;
+        padding-left: 0;
+        text-align: center;
+    }
+
+    .Investdiv h3 {
+        font-size: 12px;
+    }
+
+    .Investdiv p {
+        font-size: 13px;
+    }
+
+    .investarrow {
+        display: none;
+        /* Hide arrow in 2-column view to save space */
+    }
+
+    .nav-box .icon {
+        font-size: 28px;
+    }
+
+    .Internal-H3 {
+        font-size: 16px;
+        margin-bottom: 15px;
+    }
+}
+
+
+@media (max-width: 500px) {
+    .chart-section {
+        padding: 10px;
+    }
+
+    .chart-card {
+        padding: 16px;
+        border-radius: 20px;
+    }
+
+    .chart-header h3 {
+        font-size: 16px;
     }
 }

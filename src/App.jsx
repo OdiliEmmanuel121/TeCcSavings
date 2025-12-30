@@ -13,17 +13,32 @@ import Disclosure from './admin/pages/disclosure/Disclosure';
 import Faqs from './admin/pages/faq/Faqs';
 import Professions from './admin/pages/professions/Professions';
 import Aboutus from './admin/pages/aboutus/Aboutus';
+import Navtop from './admin/mainpage/navtop/Navtop';
+import Home from './admin/mainpage/home/Home';
 
-// 1. Create a Layout for Public Pages (Navbar included)
+
+
+// LAYOUT 1: Both Navigations (Full Site)
 const MainLayout = () => (
   <>
     <Nav />
-    {/* You can add your Footer here too */}
-    <Outlet />
+    <div className="content-area">
+      <Outlet />
+    </div>
   </>
 );
 
-// 2. Create a Layout for Auth/Business Pages (No Navbar)
+// LAYOUT 2: Navtop ONLY (Another specific route)
+const TopOnlyLayout = () => (
+  <>
+    <Navtop />
+    <div className="content-area">
+      <Outlet />
+    </div>
+  </>
+);
+
+// LAYOUT 3: No Navigation (Clean/Auth pages)
 const AuthLayout = () => (
   <div className="auth-container">
     <Outlet />
@@ -34,36 +49,32 @@ const App = () => {
   return (
     <BrowserRouter>
       <Routes>
-
-        {/* ROUTES WITH NAVBAR */}
+        {/* GROUP 1: ROUTES WITH BOTH NAV ONLY */}
         <Route element={<MainLayout />}>
           <Route path="/" element={<Whytecc />} />
           <Route path="/goforgrowth" element={<Goforgrowth />} />
           <Route path="/blog" element={<Blog />} />
-           <Route path="/login" element={<Login />} />
-             <Route path="/getstarted" element={<Getstarted />} />
         </Route>
 
-        {/* ROUTES WITHOUT NAVBAR (Login, Register, Business) */}
+        {/* GROUP 2: ROUTES WITH NAVTOP ONLY */}
+        {/* Add any page here that should only show the top bar */}
+        <Route element={<TopOnlyLayout />}>
+          <Route path="/hom" element={<Home />} />
+        </Route>
+
+        {/* GROUP 3: ROUTES WITH NO NAVIGATION (Clean Pages) */}
         <Route element={<AuthLayout />}>
-         
-        
+          <Route path="/login" element={<Login />} />
+          <Route path="/getstarted" element={<Getstarted />} />
           <Route path="/business" element={<Teccbusiness />} />
-          <Route path="/why-tecc" element={<Whyteccsavings />} />
           <Route path="/developer" element={<Developer />} />
-          <Route path="/privacy" element={<Privacypolicy/>} />
-          <Route path="/disclosure" element={<Disclosure/>} />
-          <Route path="/faqs" element={<Faqs/>} />
-          <Route path="/professions" element={<Professions/>} />
-          <Route path="/about" element={<Aboutus/>} />
-
+          <Route path="/privacy" element={<Privacypolicy />} />
+          <Route path="/disclosure" element={<Disclosure />} />
+          <Route path="/professions" element={<Professions />} />
+          <Route path="/about" element={<Aboutus />} />
+          <Route path="/why-tecc" element={<Whyteccsavings />} />
+          <Route path="/faqs" element={<Faqs />} />
         </Route>
-
-        {/* DASHBOARD ROUTES (Example of a 3rd layout) */}
-        {/* <Route path="/dashboard" element={<DashboardLayout />}>
-             <Route index element={<Home />} />
-             <Route path="invest" element={<Invest />} />
-        </Route> */}
 
       </Routes>
     </BrowserRouter>

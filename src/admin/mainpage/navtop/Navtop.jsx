@@ -8,12 +8,13 @@ import {
   SupportAgent,
   Logout
 } from '@mui/icons-material';
+import logo from '../../../assets/logo.png'
 
 const Navtop= () => {
   return (
     <div className="sidebar">
       <div className="sidebar-logo">
-        <h2>TeCc<span>.</span></h2>
+        <img src={logo} alt="logoimagenav" className='logoimagenav' />
       </div>
 
       <nav className="sidebar-links">

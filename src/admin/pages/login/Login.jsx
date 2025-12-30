@@ -64,7 +64,9 @@ const Login = () => {
             </p>
           )}
 
-          <button type="submit" className='loginButton'>Log in</button>
+        
+          <Link className='loginButton' to="/hom">Log in</Link>
+          
 
           {/* Added type="button" to prevent form submission */}
           <button type="button" className='loginButton2' onClick={() => setShowModal(true)}>
