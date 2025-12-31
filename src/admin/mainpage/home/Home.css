@@ -46,7 +46,8 @@
     margin-top: -10px;
 }
 
-.stat-card {
+.stat-card,
+.stat-card2 {
     background: #fcfcfc;
     padding: 25px;
     border-radius: 16px;
@@ -54,13 +55,13 @@
     /* padding-bottom: 250px; */
 }
 
-.stat-card h3 {
+.stat-card2 h3 {
     font-size: 14px;
     color: #64748b;
     margin-bottom: 10px;
 }
 
-.stat-card p {
+.stat-card2 p {
     font-size: 22px;
     font-weight: 800;
 }
@@ -269,17 +270,35 @@
         /* Slightly less padding to save space */
         max-width: 100%;
         margin-left: 0;
+        margin-top: 10px;
     }
 
     /* Header adjustments */
     .home-acc {
         flex-direction: column;
         gap: 5px;
+
+    }
+
+    .home-header h1 {
+        display: none;
+    }
+
+    .home-header p {
+        font-size: medium;
+        font-family: sans-serif;
+        font-style: normal;
+        font-weight: 450;
     }
 
     .home-Acc {
         margin-right: 0;
         order: 2;
+    }
+
+    .home-Acc h2 {
+        font-size: 18px;
+        margin-top: 5px;
     }
 
     .acc-icon {
@@ -290,34 +309,36 @@
 
     /* --- 2 COLUMN STATS CARDS --- */
     .stats-grid {
-        grid-template-columns: 1fr 1fr;
-        /* Force 2 columns */
-        gap: 10px;
         margin-top: 10px;
-    }
 
-    .stat-card {
-        padding: 15px 10px;
-        /* Thinner padding for 2-column fit */
     }
 
     .stat-card h3 {
-        font-size: 11px;
+        font-size: medium;
+        font: 1.5em sans-serif;
+        font-weight: 500;
     }
 
-    /* Smaller text to prevent wrapping */
     .stat-card p {
-        font-size: 14px;
-        font-weight: 700;
+        font-size: medium;
+        font: 1em sans-serif;
+        font-weight: 500;
+        margin-top: 3px;
+    }
+
+ 
+
+    .stat-card2 {
+        display: none;
     }
 
     /* Fix Add/Send Buttons inside 2-column cards */
-    .AddDiv,
-    .AddDiv1 {
+    .AddDiv {
         margin-top: 15px;
         gap: 5px;
-        flex-direction: column;
+        display: flex;
         /* Stack buttons inside cards because they are narrow */
+        gap: 180px;
     }
 
     .cardAdd,
@@ -325,9 +346,10 @@
     .cardSend1 {
         padding: 1px;
         margin-left: 0;
-        width: 100%;
         justify-content: center;
         width: 100px;
+        margin-top: 50px;
+
     }
 
     .cardAdd h5,

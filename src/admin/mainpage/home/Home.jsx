@@ -71,7 +71,7 @@ const Home = () => {
                     </div>
 
                 </div>
-                <div className="stat-card">
+                <div className="stat-card2">
                     <h3>Total Interest</h3>
                     <p className="green-text">+₦12,400.00</p>
 
