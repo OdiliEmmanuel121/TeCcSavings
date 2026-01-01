@@ -1,0 +1,101 @@
+
+
+.Invest-Container {
+    padding: 30px;
+    margin-left: 18%; /* Sidebar offset */
+    background-color: #fcfdfe;
+    min-height: 100vh;
+    max-width: 82%;
+}
+
+.invest-header { margin-bottom: 30px; }
+.invest-header h1 { color: #061a11; font-size: 26px; font-weight: 800; }
+.invest-header p { color: #64748b; font-size: 14px; }
+
+.invest-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 20px;
+}
+
+.invest-item-card {
+    background: #dce7e0;
+    border: 1px solid #f1f5f9;
+    border-radius: 20px;
+    padding: 24px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+    transition: transform 0.2s ease;
+}
+
+.invest-item-card:hover { transform: translateY(-3px); }
+
+.invest-card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.invest-title { display: flex; align-items: center; gap: 12px; }
+
+.icon-bg {
+    background: #ecfdf5;
+    color: #278f2e;
+    padding: 8px;
+    border-radius: 10px;
+}
+
+.invest-title h3 { font-size: 16px; color: #1e293b; margin: 0; }
+
+.status-badge {
+    background: #e9f1e9;
+    color: #278f2e;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 20px;
+    text-transform: uppercase;
+}
+
+.invest-amount p {
+    font-size: 24px;
+    font-weight: 800;
+    color: #061a11;
+    margin: 10px 0 20px 0;
+}
+
+.invest-dates-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-top: 1px solid #f8fafc;
+    padding-top: 15px;
+    gap: 15px;
+}
+
+.date-group { display: flex; align-items: flex-start; gap: 8px; }
+
+.date-icon { font-size: 18px !important; color: #94a3b8; margin-top: 2px; }
+.date-icon.maturity { color: #278f2e; }
+
+.date-group span { font-size: 10px; color: #94a3b8; text-transform: uppercase; font-weight: 600; }
+.date-group p { font-size: 13px; color: #1e293b; font-weight: 700; margin: 2px 0 0 0; }
+
+/* --- MOBILE VIEW --- */
+@media (max-width: 500px) {
+    .Invest-Container {
+        margin-left: 0;
+        padding: 20px;
+        padding-bottom: 100px; /* Space for bottom nav */
+    }
+
+    .invest-list { grid-template-columns: 1fr; }
+
+    .invest-item-card { padding: 18px; }
+
+    .invest-amount p { font-size: 20px; }
+
+    .invest-dates-grid {
+        grid-template-columns: 1fr; /* Stack dates vertically on very small screens */
+        gap: 12px;
+    }
+}

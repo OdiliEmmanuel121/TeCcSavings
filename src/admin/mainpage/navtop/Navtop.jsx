@@ -31,7 +31,7 @@ const Navtop= () => {
 
         <NavLink to="/inv" className={({ isActive }) => isActive ? 'nav-item active' : 'nav-item'}>
           <TrendingUp className="icon" />
-          <span>Investments</span>
+          <span>Invest</span>
         </NavLink>
 
         <NavLink to="/acc" className={({ isActive }) => isActive ? 'nav-item active' : 'nav-item'}>

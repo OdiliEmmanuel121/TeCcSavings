@@ -37,8 +37,8 @@
     margin-right: 20px;
 }
 
-/* Stats Cards */
-.stats-grid {
+
+/* .stats-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 20px;
@@ -52,7 +52,7 @@
     padding: 25px;
     border-radius: 16px;
     box-shadow: 0 4px 12px rgba(1, 1, 1, 0.20);
-    /* padding-bottom: 250px; */
+
 }
 
 .stat-card2 h3 {
@@ -144,6 +144,133 @@
     font-style: italic;
     font-size: 24px;
     color: #142922;
+} */
+
+/* Stats Grid Layout */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+    margin-bottom: 40px;
+}
+
+/* Base Card Styling */
+.stat-card,
+.stat-card2 {
+    background: #eaeeeb;
+    padding: 30px;
+    border-radius: 24px;
+    box-shadow: 0 10px 30px rgba(0, 0.5, .15, 0.15);
+    border: 1px solid #f1f5f9;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 240px;
+    /* Gives a consistent height without massive margins */
+    transition: transform 0.3s ease;
+}
+
+.stat-card:hover,
+.stat-card2:hover {
+    transform: translateY(-5px);
+}
+
+/* Typography */
+.totalsavings,
+.stat-card2 h3 {
+    font-size: 14px;
+    color: #64748b;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin: 0 0 8px 0;
+}
+
+.money1,
+.stat-card2 p {
+    font-size: 28px;
+    font-weight: 800;
+    color: #061a11;
+    margin: 0;
+}
+
+.green-text {
+    color: #278f2e !important;
+}
+
+.Balance {
+    font-style: italic;
+    color: #278f2e;
+    font-size: 13px;
+    margin-top: 4px;
+    font-weight: 500;
+}
+
+/* Button Containers (The fixed version) */
+.AddDiv,
+.AddDiv1 {
+    display: flex;
+    gap: 12px;
+    margin-top: 30px;
+    /* Balanced spacing */
+    justify-content: flex-start;
+}
+
+/* Button Styling */
+.cardAdd,
+.cardSend,
+.cardSend1 {
+    background-color: #f0fdf4;
+    border: 1.5px solid #278f2e;
+    border-radius: 14px;
+    padding: 10px 18px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin: 0;
+    /* Removed negative margins */
+}
+
+.cardAdd:hover,
+.cardSend:hover,
+.cardSend1:hover {
+    background-color: #278f2e;
+}
+
+.cardAdd:hover h5,
+.cardSend:hover h5,
+.cardSend1:hover h5,
+.cardAdd:hover .addicon,
+.cardSend:hover .arrowicon,
+.cardSend1:hover .arrowicon1 {
+    color: #ffffff;
+}
+
+.addicon,
+.arrowicon,
+.arrowicon1 {
+    color: #278f2e;
+    font-size: 20px !important;
+}
+
+.addmoney,
+.sendmoney,
+.send {
+    font-size: 13px;
+    font-weight: 700;
+    color: #061a11;
+    margin: 0;
+    white-space: nowrap;
+}
+
+/* Section Header */
+.Internal-H3 {
+    margin: 20px 0;
+    font-weight: 800;
+    font-size: 22px;
+    color: #061a11;
 }
 
 /* The Navigation Grid */
@@ -307,56 +434,88 @@
         right: 0;
     }
 
-    /* --- 2 COLUMN STATS CARDS --- */
-    .stats-grid {
-        margin-top: 10px;
+    /* --- MOBILE VIEW (MAX 500px) --- */
+    @media (max-width: 500px) {
+        .internal-home {
+            padding: 15px;
+            max-width: 100%;
+            margin-left: 0;
+            /* Remove sidebar offset */
+            margin-bottom: 80px;
+            /* Space for bottom navigation */
+        }
 
+        /* 2 Column Grid for Stats */
+        .stats-grid {
+            grid-template-columns: 1fr 1fr;
+            /* Force 2 columns */
+            gap: 12px;
+            margin-bottom: 30px;
+        }
+
+        .stat-card,
+        .stat-card2 {
+            padding: 15px;
+            min-height: 200px;
+            /* Slightly shorter for mobile */
+            border-radius: 20px;
+        }
+
+        /* Scale down typography for 2-column fit */
+        .totalsavings,
+        .stat-card2 h3 {
+            font-size: 10px;
+            letter-spacing: 0.2px;
+        }
+
+        .money1,
+        .stat-card2 p {
+            font-size: 16px;
+            /* Smaller font so amounts don't overflow */
+            word-break: break-all;
+        }
+
+        .Balance {
+            font-size: 11px;
+        }
+
+        /* Stack buttons vertically because cards are now narrow */
+        .AddDiv,
+        .AddDiv1 {
+            flex-direction: column;
+            gap: 8px;
+            margin-top: 20px;
+        }
+
+        .cardAdd,
+        .cardSend,
+        .cardSend1 {
+            padding: 8px 10px;
+            width: 100%;
+            /* Full width of the narrow card */
+            justify-content: center;
+            border-radius: 10px;
+        }
+
+        .addmoney,
+        .sendmoney,
+        .send {
+            font-size: 11px;
+        }
+
+        .addicon,
+        .arrowicon,
+        .arrowicon1 {
+            font-size: 16px !important;
+        }
+
+        /* Heading adjustment */
+        .Internal-H3 {
+            font-size: 18px;
+            margin: 15px 0;
+        }
     }
 
-    .stat-card h3 {
-        font-size: medium;
-        font: 1.5em sans-serif;
-        font-weight: 500;
-    }
-
-    .stat-card p {
-        font-size: medium;
-        font: 1em sans-serif;
-        font-weight: 500;
-        margin-top: 3px;
-    }
-
- 
-
-    .stat-card2 {
-        display: none;
-    }
-
-    /* Fix Add/Send Buttons inside 2-column cards */
-    .AddDiv {
-        margin-top: 15px;
-        gap: 5px;
-        display: flex;
-        /* Stack buttons inside cards because they are narrow */
-        gap: 180px;
-    }
-
-    .cardAdd,
-    .cardSend,
-    .cardSend1 {
-        padding: 1px;
-        margin-left: 0;
-        justify-content: center;
-        width: 100px;
-        margin-top: 50px;
-
-    }
-
-    .cardAdd h5,
-    .cardSend h5,
-    .cardSend1 h5 {
-        font-size: 10px;
-    }
 
     /* --- 2 COLUMN INVESTMENT BOXES --- */
     .internal-nav-grid {

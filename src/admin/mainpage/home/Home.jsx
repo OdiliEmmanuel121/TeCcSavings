@@ -55,18 +55,18 @@ const Home = () => {
             {/* Quick Stats / Top Cards */}
             <div className="stats-grid">
                 <div className="stat-card">
-                    <h3>Total Savings</h3>
-                    <p>₦450,000.00</p>
+                    <h3 className='totalsavings' >Total Savings</h3>
+                    <p className='money1' >₦450,000.00</p>
                     <h5 className='Balance' >Balance Updated</h5>
 
                     <div className='AddDiv'>
                         <div className='cardAdd'>
                             <Add className='addicon' />
-                            <h5> Add Money</h5>
+                            <h5 className='addmoney' > Add Money</h5>
                         </div>
                         <div className='cardSend' >
                             <ArrowRight className='arrowicon' />
-                            <h5> Send Money</h5>
+                            <h5 className='sendmoney'> Send Money</h5>
                         </div>
                     </div>
 
@@ -78,7 +78,7 @@ const Home = () => {
                     <div className='AddDiv1'>
                         <div className='cardSend1' >
                             <ArrowRight className='arrowicon1' />
-                            <h5> Send Money</h5>
+                            <h5 className='send' > Send Money</h5>
                         </div>
                     </div>
 
@@ -88,14 +88,14 @@ const Home = () => {
             <div className='Internal-H3'>
                 <h3>Your Investment</h3>
             </div>
-            {/* Internal Navigation Links (Middle of screen) */}
+            
             <div className="internal-nav-grid">
 
                 <div to="/wall" className="nav-box">
                     <TrendingUp className="icon" />
                     <div className='Investdiv'>
-                        <h3>House rent</h3>
-                        <p>₦950,000.00</p>
+                        <h3 className='rent' >House rent</h3>
+                        <p className='paymoney' >₦950,000.00</p>
                         <h5 className='Invest' >Balance Updated</h5>
                     </div>
                     <ArrowBigUpDashIcon className='investarrow' />

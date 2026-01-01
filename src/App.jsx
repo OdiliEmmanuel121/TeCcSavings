@@ -15,6 +15,10 @@ import Professions from './admin/pages/professions/Professions';
 import Aboutus from './admin/pages/aboutus/Aboutus';
 import Navtop from './admin/mainpage/navtop/Navtop';
 import Home from './admin/mainpage/home/Home';
+import Wallet from './admin/mainpage/wallet/Wallet';
+import Invest from './admin/mainpage/invest/Invest';
+import Account from './admin/mainpage/account/Account';
+import Support from './admin/mainpage/support/Support';
 
 
 
@@ -60,6 +64,10 @@ const App = () => {
         {/* Add any page here that should only show the top bar */}
         <Route element={<TopOnlyLayout />}>
           <Route path="/hom" element={<Home />} />
+          <Route path="/wall" element={<Wallet />} />
+          <Route path="/inv" element={<Invest />} />
+          <Route path="/acc" element={<Account />} />
+          <Route path="/con" element={<Support />} />
         </Route>
 
         {/* GROUP 3: ROUTES WITH NO NAVIGATION (Clean Pages) */}
