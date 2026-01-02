@@ -30,7 +30,7 @@
     background: #fff;
     padding: 25px;
     border-radius: 24px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.04);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.18);
     border: 1px solid #f1f5f9;
 }
 
@@ -136,18 +136,47 @@
 }
 
 /* --- MOBILE VIEW --- */
+/* --- MOBILE VIEW (MAX 500px) --- */
 @media (max-width: 500px) {
     .Wallet-Container {
-        margin-left: 0;
-        padding-bottom: 100px;
+        /* 1. Reset the layout for mobile flow */
+        margin-left: 0 !important; 
+        max-width: 100%;
+        width: 100%;
+        padding: 15px;
+        
+        /* 2. Enable vertical growth and scrolling */
+        display: block; 
+        height: auto; 
+        min-height: 100vh;
+        overflow-y: visible; 
+        
+        /* 3. Space for your bottom navigation bar */
+        padding-bottom: 120px; 
+        box-sizing: border-box;
     }
     
+    .wallet-header h2 {
+        font-size: 22px;
+        text-align: center;
+    }
+
+    .wallet-header p {
+        text-align: center;
+    }
+
     .balance-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; /* Stack cards vertically */
+        gap: 15px;
     }
 
     .funding-options {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; /* Stack buttons vertically */
+        gap: 12px;
+    }
+
+    .fund-method {
+        padding: 15px; /* Slightly smaller for mobile screens */
     }
 }
 

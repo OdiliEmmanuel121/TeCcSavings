@@ -393,23 +393,33 @@
 /* --- MOBILE VIEW (MAX 500px) --- */
 @media (max-width: 500px) {
     .internal-home {
-        padding: 12px;
-        /* Slightly less padding to save space */
+      padding: 15px;
         max-width: 100%;
-        margin-left: 0;
+        margin-left: 0 !important; /* Forces removal of sidebar space */
         margin-top: 10px;
-        height: auto;
+        margin-bottom: 100px; /* Crucial: space for the bottom nav bar */
+        height: auto; 
+        display: block; /* Ensures standard document flow */
+        overflow-y: visible;
     }
 
     /* Header adjustments */
     .home-acc {
+        position: relative; /* Container for absolute icon */
         flex-direction: column;
         gap: 5px;
+        padding-top: 20px;
 
     }
 
     .home-header h1 {
         display: none;
+    }
+
+    .acc-icon {
+        position: absolute;
+        top: 0;
+        right: 0;
     }
 
     .home-header p {
@@ -429,23 +439,9 @@
         margin-top: 5px;
     }
 
-    .acc-icon {
-        position: absolute;
-        top: 0;
-        right: 0;
-    }
-
+  
     /* --- MOBILE VIEW (MAX 500px) --- */
     @media (max-width: 500px) {
-        .internal-home {
-            padding: 15px;
-            max-width: 100%;
-            margin-left: 0;
-            /* Remove sidebar offset */
-            margin-bottom: 80px;
-            /* Space for bottom navigation */
-        }
-
         /* 2 Column Grid for Stats */
         .stats-grid {
             grid-template-columns: 1fr 1fr;
@@ -502,6 +498,7 @@
         .sendmoney,
         .send {
             font-size: 11px;
+            font-family: sans-serif;
         }
 
         .addicon,

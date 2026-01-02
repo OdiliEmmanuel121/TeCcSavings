@@ -83,19 +83,41 @@
 /* --- MOBILE VIEW --- */
 @media (max-width: 500px) {
     .Invest-Container {
-        margin-left: 0;
+        /* 1. Reset Position and Width */
+        margin-left: 0 !important; 
+        width: 100%;
+        max-width: 100%;
         padding: 20px;
-        padding-bottom: 100px; /* Space for bottom nav */
+        
+        /* 2. THE SCROLL FIXES */
+        display: block;        /* Ensures it follows normal document flow */
+        height: auto;         /* Allows height to grow with content */
+        min-height: 100vh;    /* Ensures it at least fills the screen */
+        overflow-y: visible;  /* Allows content to push past the bottom fold */
+        
+        /* 3. Navigation Space */
+        padding-bottom: 120px; 
+        box-sizing: border-box; /* Prevents padding from adding to width */
     }
 
-    .invest-list { grid-template-columns: 1fr; }
+    .invest-list { 
+        display: grid;
+        grid-template-columns: 1fr; 
+        gap: 15px;
+    }
 
-    .invest-item-card { padding: 18px; }
+    .invest-item-card { 
+        padding: 18px; 
+        height: auto; /* Ensure cards don't have fixed heights */
+    }
 
-    .invest-amount p { font-size: 20px; }
+    .invest-amount p { 
+        font-size: 20px; 
+    }
 
     .invest-dates-grid {
-        grid-template-columns: 1fr; /* Stack dates vertically on very small screens */
+        display: grid;
+        grid-template-columns: 1fr; 
         gap: 12px;
     }
 }

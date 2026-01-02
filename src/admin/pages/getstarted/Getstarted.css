@@ -237,77 +237,52 @@
 
 
 
-/* ==========================================
-   MOBILE STYLES (Targeting screens < 768px)
-   ========================================== */
 @media (max-width: 500px) {
+    /* 1. Ensure the wrapper allows the height to grow */
     .get-started-page-wrapper {
+        display: block; /* Change from flex to block for natural scrolling */
         padding: 20px 15px;
-        margin-top: 90px;
-        align-items: flex-start; /* Better for long forms on mobile */
+        margin-top: 20px; /* Reduced margin */
+        height: auto; 
+        min-height: 100vh;
+        overflow-y: visible; /* Explicitly allow vertical scroll */
     }
 
     .get-started-container {
-        flex-direction: column; /* Stacks image and form */
-        gap: 30px;
+        display: block; /* Stack elements naturally */
+        width: 100%;
     }
 
-    /* Hide the large floating image on mobile to focus on the form */
+    /* 2. Remove the flex: 1.2 which can cause sizing bugs on mobile */
+    .auth-section {
+        width: 100%;
+        max-width: 100%;
+        margin-bottom: 40px; /* Add space at the bottom */
+    }
+
+    /* 3. Hide image as you already did */
     .efxmain {
         display: none; 
     }
 
-    .auth-section {
-        width: 100%;
-        max-width: 100%; /* Use full width on mobile */
-    }
-
-    .auth-header {
-        text-align: center;
-        margin-bottom: 25px;
-    }
-
-    .auth-header h1 {
-        font-size: 28px;
-    }
-
-    /* Form Card adjustments */
-    .form-card {
-        padding: 25px 20px;
-        border-radius: 16px;
-    }
-
-    /* Stepper Mobile Fix */
+    /* 4. Improve Stepper for small screens */
     .stepper-wrapper {
-        gap: 5px;
-        padding-bottom: 10px;
-    }
-
-    .step {
-        font-size: 10px; /* Slightly smaller text */
-    }
-
-    .step span {
-        width: 24px;
-        height: 24px;
-        font-size: 12px;
-    }
-
-    /* Inputs and Buttons */
-    .country-dropdown,
-    .form-input {
-        padding: 12px;
-        font-size: 14px;
-    }
-
-    .button-row {
-        flex-direction: column-reverse; /* Put 'Back' under 'Continue' on tiny screens */
+        overflow-x: auto; /* Allow the steps to scroll horizontally if too wide */
+        white-space: nowrap;
+        justify-content: flex-start;
         gap: 15px;
+        padding-bottom: 15px;
+    }
+
+    /* 5. Fix Button Row to prevent overlap */
+    .button-row {
+        display: flex;
+        flex-direction: column; /* Stack buttons vertically */
+        gap: 12px;
     }
 
     .Continuebutton, .BackButton {
         width: 100%;
-        flex: none;
-        padding: 14px;
+        box-sizing: border-box;
     }
 }

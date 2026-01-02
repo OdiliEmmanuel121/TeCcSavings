@@ -299,28 +299,36 @@
 
 
 
+
 /* MOBILE RESPONSIVENESS */
 @media (max-width: 500px) {
     .loginContainer {
-        flex-direction: column-reverse;
-        /* Image on top, form below */
-        gap: 40px;
+        flex-direction: column; /* Changed from column-reverse to keep flow natural */
+        gap: 20px;
         text-align: center;
-        margin-top: 150px;
+        margin-top: 20px; /* Remove the massive 150px margin */
+        padding-bottom: 50px; /* Ensure space at the bottom to scroll */
+        height: auto; /* Allow the container to grow with content */
+        overflow-y: visible; 
+    }
+
+    .logoclasslog {
+        display: block; /* Changed from flex */
+        margin: 20px auto; /* Centers the logo without negative margins */
+        width: 70px;
     }
 
     .iphoneimgup {
         display: none;
     }
 
-    .visiblepassword {
-        transform: translateY(-70%);
+    .loginDetails {
+        padding: 0 10px;
     }
-}
 
-.logoclasslog {
-    display: flex;
-    margin-top: -630px;
-    width: 90px;
-
+    /* Adjust the password toggle for small screens */
+    .visiblepassword {
+        transform: translateY(-50%);
+        top: 25px; /* Adjust based on your input height */
+    }
 }
