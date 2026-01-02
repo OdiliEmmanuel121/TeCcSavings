@@ -511,6 +511,10 @@
         .Internal-H3 {
             font-size: 18px;
             margin: 15px 0;
+            font-family: sans-serif;
+        }
+        .acc-icon{
+            display: none;
         }
     }
 

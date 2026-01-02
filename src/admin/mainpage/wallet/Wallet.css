@@ -159,10 +159,12 @@
     .wallet-header h2 {
         font-size: 22px;
         text-align: center;
+        font-family: sans-serif;
     }
 
     .wallet-header p {
         text-align: center;
+        font-family: sans-serif;
     }
 
     .balance-grid {
