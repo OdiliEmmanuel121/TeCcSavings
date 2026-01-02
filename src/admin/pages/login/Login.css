@@ -301,20 +301,32 @@
 
 
 /* MOBILE RESPONSIVENESS */
+/* This part resets the global height issues */
 @media (max-width: 500px) {
+    /* Force parents to allow scrolling */
+    html, body {
+        height: auto !important;
+        overflow-y: auto !important;
+        position: relative;
+    }
+
     .loginContainer {
-        flex-direction: column; /* Changed from column-reverse to keep flow natural */
+        display: flex;
+        flex-direction: column;
         gap: 20px;
         text-align: center;
-        margin-top: 20px; /* Remove the massive 150px margin */
-        padding-bottom: 50px; /* Ensure space at the bottom to scroll */
-        height: auto; /* Allow the container to grow with content */
-        overflow-y: visible; 
+        margin-top: 0px; 
+        padding: 40px 15px 80px 15px; /* Large bottom padding for the 'Create Account' link */
+        height: auto !important; 
+        min-height: 100vh; /* Ensures it fills the screen but can grow */
+        width: 100%;
+        box-sizing: border-box;
+        overflow-y: visible !important;
     }
 
     .logoclasslog {
-        display: block; /* Changed from flex */
-        margin: 20px auto; /* Centers the logo without negative margins */
+        display: block;
+        margin: 40px auto 10px; /* Gives space from top of phone */
         width: 70px;
     }
 
@@ -323,12 +335,12 @@
     }
 
     .loginDetails {
-        padding: 0 10px;
+        width: 100%;
+        max-width: 100%;
     }
 
-    /* Adjust the password toggle for small screens */
-    .visiblepassword {
-        transform: translateY(-50%);
-        top: 25px; /* Adjust based on your input height */
+    .logincard {
+        box-shadow: none; /* Simplifies mobile rendering */
+        padding: 20px;
     }
 }

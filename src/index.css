@@ -3,3 +3,17 @@
   margin: 0;
   box-sizing: border-box;
 }
+
+/* In your index.css or App.css */
+html, body, #root {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    /* Change height from 100vh to auto */
+    height: auto !important; 
+    min-height: 100%;
+    /* Force vertical scroll to be allowed */
+    overflow-y: auto !important;
+    overflow-x: hidden; /* Prevents side-to-side shaking */
+    position: relative;
+}

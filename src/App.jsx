@@ -19,6 +19,7 @@ import Wallet from './admin/mainpage/wallet/Wallet';
 import Invest from './admin/mainpage/invest/Invest';
 import Account from './admin/mainpage/account/Account';
 import Support from './admin/mainpage/support/Support';
+import './index.css'
 
 
 
