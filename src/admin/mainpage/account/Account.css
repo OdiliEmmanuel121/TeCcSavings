@@ -3,7 +3,7 @@
     padding: 30px;
     margin-left: 18%; /* Sidebar offset */
     background-color: #fcfdfe;
-    min-height: 100vh;
+    /* min-height: 100vh; */
     font-family: 'Inter', sans-serif;
     max-width: 82%;
 }

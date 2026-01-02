@@ -1,6 +1,6 @@
 /* Global Reset for the page context */
 .loginContainer {
-    min-height: 100vh;
+    
     display: flex;
     align-items: center;
     justify-content: center;
